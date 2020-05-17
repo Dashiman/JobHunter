@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">{{'login.title'|translate}}</div>
+        <div class="card-body">
+          <form id="loginForm" #loginForm="ngForm" action="" method="post">
+            <div class="form-group row">
+              <label for="text" class="col-md-4 col-form-label text-md-right">{{'login.username'|translate}}</label>
+              <div class="col-md-6">
+                <input type="text" [(ngModel)]="user.username" #username id="username" name="username" class="form-control" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">{{'login.password'|translate}}</label>
+
+              <div class="col-md-6">
+                <input type="password" [(ngModel)]="user.password" class="form-control" #password id="password" name="password" />
+              </div>
+            </div>
+            <div class="form-group row mb-0 justify-content-center">
+              <div class="col-md-8 offset-md-4">
+                <a routerLink="/newUser" class="btn btn-success login_btn" style="margin-right:1vh;">{{'registration.register'|translate}}</a>
+                <button (click)="login(loginForm.form)" class="btn btn-primary login_btn">{{'login.login'|translate}}</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

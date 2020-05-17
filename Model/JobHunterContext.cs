@@ -19,6 +19,8 @@ namespace Model
             public virtual DbSet<Users> Users { get; set; }
             public virtual DbSet<JobOffer> JobOffer { get; set; }
             public virtual DbSet<BidOffer> BidOffer { get; set; }
+            public virtual DbSet<Recomendation> Recomendation { get; set; }
+            public virtual DbSet<TakenOffer> TakenOffer { get; set; }
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {

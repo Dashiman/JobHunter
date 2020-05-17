@@ -1,0 +1,23 @@
+{
+  "registration": {
+    "username": "Login",
+    "password": "Hasło",
+    "email": "Adres e-mail",
+    "phone": "Numer telefonu",
+    "name": "Imię",
+    "lastname": "Nazwisko",
+    "register": "Zarejestruj się",
+    "title": "Panel rejestracji użytkownika"
+  },
+  "login": {
+    "login": "Zaloguj",
+    "logout": "Wyloguj",
+
+    "password": "Hasło",
+    "register": "Zarejestruj się",
+    "username": "Login",
+    "email": "Adres e-mail",
+    "title": "Panel logowania",
+    "yourName": "Witaj, "  
+  }
+}

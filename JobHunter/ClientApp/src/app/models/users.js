@@ -6,4 +6,10 @@ var Users = /** @class */ (function () {
     return Users;
 }());
 exports.Users = Users;
+var Recomendation = /** @class */ (function () {
+    function Recomendation() {
+    }
+    return Recomendation;
+}());
+exports.Recomendation = Recomendation;
 //# sourceMappingURL=users.js.map

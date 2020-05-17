@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
-    public class JobOffer
+    public class TakenOffer
     {
         [Key] public int Id { get; set; }
 
@@ -21,10 +21,6 @@ namespace Model
         [ForeignKey("AddedBy")] public int AddedById { get; set; }
 
         public virtual Users AddedBy { get; set; }
-        public DateTime EndOfferDate { get; set; }
-
-
-        public ICollection<BidOffer> BidOffers { get; set; }
-        public int? EndedAs { get; set; }
+        public DateTime FinishDate { get; set; }
     }
 }

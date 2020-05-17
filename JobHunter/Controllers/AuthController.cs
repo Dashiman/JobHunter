@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 using Microsoft.AspNetCore.Cors;
+using System.Dynamic;
 
 namespace JobHunter.Controllers
 {
@@ -73,6 +74,7 @@ namespace JobHunter.Controllers
         [Route("GetUsername")]
         public async Task<IActionResult> GetUsername()
         {
+            dynamic session = new ExpandoObject();
 
             string result = "";
             if (HttpContext.Session.GetInt32("username") != null)
@@ -80,7 +82,8 @@ namespace JobHunter.Controllers
             else
                 result = "";
 
-            return Ok(result);
+            session.username = result;
+            return Ok(session);
         }
         [HttpPost("[action]")]
         [Route("Logout")]

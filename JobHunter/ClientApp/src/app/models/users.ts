@@ -11,3 +11,11 @@ export class Users {
   authority: number;
 
 }
+export class Recomendation {
+  id: number;
+  addedById: number;
+  addedBy: Users;
+  content: string;
+  forUserId: number;
+  forUser:Users;
+}

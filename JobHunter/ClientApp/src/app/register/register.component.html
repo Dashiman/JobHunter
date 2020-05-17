@@ -1,1 +1,67 @@
-<p>register works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">{{'registration.title'|translate}}</div>
+        <div class="card-body">
+          <form id="registerForm" [formGroup]="regisFG" #registerForm="ngForm" >
+            <div class="form-group">
+              <input type="text" formControlName="username" #username id="username" name="username" class="form-control" placeholder="{{'login.username'|translate}}" />
+              <div *ngIf="username.errors?.required">
+                Nazwa użytkownika jest wymagana.
+              </div>
+              <div *ngIf="username.errors?.minlength">
+                Nazwa użytkownika musi mieć co najmniej 3 znaki długości.
+              </div>
+            </div>
+              <div class="form-group">
+                <input type="password" formControlName="password" class="form-control" #password id="password" name="password" placeholder="{{'login.password'|translate}}" /><br/>
+                  <div *ngIf="password.errors?.required">
+                    Hasło użytkownika jest wymagane.
+                  </div>
+                  <div *ngIf="password.errors?.minlength">
+                    Hasło musi mieć co najmniej 6 znaków.
+                  </div>
+                <div class="form-group">
+                  <input type="text" formControlName="email" class="form-control" #email id="email" name="email" placeholder="{{'registration.email'|translate}}" email="true" />
+                    <div *ngIf="email.errors?.email">
+                      Adres e-mail musi spełniać wymagania dotyczące prawidłowej notacji: użytkownik@domena
+                    </div>
+                    <div *ngIf="email.errors?.required">
+                      Adres e-mail jest wymagany.
+                    </div>
+                  </div>
+                <div class="form-group">
+                  <input type="text" formControlName="name" class="form-control" #name id="name" name="name" placeholder="{{'registration.name'|translate}}" />
+                    <div *ngIf="name.errors?.required">
+                      Pole 'Imię' jest wymagane.
+                    </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="lastname" class="form-control" #lastname id="lastname" name="lastname" placeholder="{{'registration.lastname'|translate}}" />
+                    <div *ngIf="lastname.errors?.required">
+                      Pole 'Nazwisko' jest wymagane.
+                    </div>
+                  </div>
+                <div class="form-group">
+                  <input type="text" formControlName="phoneNumber" class="form-control" #phone id="phone" name="phone" placeholder="{{'registration.phone'|translate}}"  />
+                    <div *ngIf="phoneNumber.errors?.required">
+                      Pole 'Telefon' jest wymagane.
+                    </div>
+                    <div *ngIf="phoneNumber.errors?.minlength">
+                      Numer telefonu musi mieć dokładnie 9 cyfr.
+                    </div>
+                  </div>
+                <div class="form-group justify-content-center">
+                  <div class="col-md-8 offset-md-4">
+                    <button (click)="addUser(registerForm.form)" class="btn btn-success login_btn" style="margin-right: 0.5vh;">{{'registration.register'|translate}}</button>
+                    <button type="button" class="btn btn-primary" onclick="registerForm.reset()">Reset</button>
+                  </div>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

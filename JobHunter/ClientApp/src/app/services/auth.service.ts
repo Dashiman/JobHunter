@@ -4,6 +4,8 @@ import { PlatformLocation } from '@angular/common';
 import { Users } from '../models/users';
 import { Observable, BehaviorSubject, Subject } from 'rxjs';
 import { map } from "rxjs/operators";
+import { session } from "../models/session";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,8 +29,8 @@ export class AuthService {
   getAuthority(): Observable<number> {
     return this.http.get(this.baseUrl + "/api/auth/GetAuthority").pipe(map(res => { return res as number }));
   }
-  getUserName(): Observable<string> {
-    return this.http.get(this.baseUrl + "/api/auth/GetUsername").pipe(map(res => { return res as string }));
+  getUserName(): Observable<session> {
+    return this.http.get(this.baseUrl + "/api/auth/GetUsername").pipe(map(res => { return res as session}));
   }
   logout(): Observable<number> {
     return this.http.get(this.baseUrl + "/api/auth/Logout").pipe(map(res => { return res as number }));
