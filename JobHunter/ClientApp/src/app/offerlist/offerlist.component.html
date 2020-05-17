@@ -1,1 +1,6 @@
-<p>offerlist works!</p>
+<div *ngIf="!loading">
+
+  <p *ngFor="let o of offer">{{o.title}}</p>
+
+
+</div>

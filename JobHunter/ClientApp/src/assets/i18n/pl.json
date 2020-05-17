@@ -18,6 +18,22 @@
     "username": "Login",
     "email": "Adres e-mail",
     "title": "Panel logowania",
-    "yourName": "Witaj, "  
+    "yourName": "Witaj, "
+  },
+  "nav": {
+    "newOffer": "Dodaj zlecenie",
+    "manyOffers": "Dodaj wiele zleceń"
+  },
+  "offer": {
+    "title": "Tytuł",
+    "cat": "Kategoria",
+    "desc": "Opis",
+    "money": "Proponowana kwota",
+    "add": "Dodaj",
+    "end": "Koniec oferty"
+  },
+  "errors": {
+    "req": "Pole jest wymagane",
+    "jobAddErr": "Błąd podczas dodawania oferty"
   }
 }

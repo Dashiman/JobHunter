@@ -66,7 +66,7 @@ namespace Services
             }
             catch (NullReferenceException NEx)
             {
-
+                
                 return (int)LoginStatuses.BrakUzytkownika;
             }
             catch (Exception ex)

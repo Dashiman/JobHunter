@@ -12,6 +12,12 @@ var TakenOffer = /** @class */ (function () {
     return TakenOffer;
 }());
 exports.TakenOffer = TakenOffer;
+var Category = /** @class */ (function () {
+    function Category() {
+    }
+    return Category;
+}());
+exports.Category = Category;
 /*
  JobOffer
  1- do wzięcia

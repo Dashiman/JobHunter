@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Model;
 using Services;
 
@@ -33,7 +34,7 @@ namespace JobHunter
 
                 //builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
-
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(10); });
             //   services.AddMvc();
             services.AddDbContext<JobHunterContext>(options =>
@@ -44,10 +45,11 @@ namespace JobHunter
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/dist"; });
             services.AddTransient<IRegistrationService, RegistrationService>();
             services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IJobService, JobService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -59,7 +61,7 @@ namespace JobHunter
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            loggerFactory.AddFile("Logs/jobhunterLog-{Date}.txt");
             app.UseHttpsRedirection();
             app.UseSession();
             app.UseStaticFiles();

@@ -18,6 +18,11 @@
     "username": "Username",
     "yourName": "Welcome, ",
     "title": "Login panel"
+  },
+  "nav": {
+    "newOffer": "Dodaj zlecenie",
+   "manyOffers": "Add many offers"
+
   }
 
 }

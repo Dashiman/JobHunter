@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20200515181717_joboffers.Designer.cs" />
     <Compile Remove="Migrations\20200517104644_recomendations.cs" />
     <Compile Remove="Migrations\20200517104644_recomendations.Designer.cs" />
+    <Compile Remove="Migrations\20200517174442_noweTabele.cs" />
+    <Compile Remove="Migrations\20200517174442_noweTabele.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

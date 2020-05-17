@@ -12,7 +12,7 @@ public   TakenBy:Users;
 public AddedById :number;
 public  AddedBy:Users;
 public EndOfferDate :Date;
-
+  public CategoryId: number;
 
 
 public BidOffers:BidOffer[];
@@ -31,7 +31,10 @@ export  class TakenOffer {
   public AddedBy: Users;
   public FinishDate: Date;
 }
-
+export class Category {
+  public id: number;
+  public description: string;
+}
 /*
  JobOffer
  1- do wzięcia
