@@ -2,34 +2,36 @@ import { Users } from "./users";
 import { BidOffer } from "./BidOffer";
 
 export class JobOffer {
-  public  Id:number;
-public Title:string
-public  DeclaredCost:number;
-public  Description :string;
-public  Status :number;
-public TakenById :number;
-public   TakenBy:Users;
-public AddedById :number;
-public  AddedBy:Users;
-public EndOfferDate :Date;
-  public CategoryId: number;
+  public  id:number;
+public title:string
+public  declaredCost:number;
+public  description :string;
+public  status :number;
+public takenById :number;
+public   takenBy:Users;
+public addedById :number;
+public  addedBy:Users;
+public endOfferDate :Date;
+  public categoryId: number;
+  public category: Category;
+
+public bidOffers:BidOffer[];
+public endedAs :number;
 
 
-public BidOffers:BidOffer[];
-public EndedAs :number;
-
+  public bidding:boolean
 }
 export  class TakenOffer {
-  public Id: number;
-  public Title: string
-  public DeclaredCost: number;
-  public Description: string;
-  public Status: number;
-  public TakenById: number;
-  public TakenBy: Users;
-  public AddedById: number;
-  public AddedBy: Users;
-  public FinishDate: Date;
+  public id: number;
+  public title: string
+  public declaredCost: number;
+  public description: string;
+  public status: number;
+  public takenById: number;
+  public takenBy: Users;
+  public addedById: number;
+  public addedBy: Users;
+  public finishDate: Date;
 }
 export class Category {
   public id: number;

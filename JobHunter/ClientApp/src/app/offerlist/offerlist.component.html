@@ -1,6 +1,48 @@
 <div *ngIf="!loading">
+  <app-nav-menu></app-nav-menu>
 
-  <p *ngFor="let o of offer">{{o.title}}</p>
 
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let o of offer| paginate: { itemsPerPage: 10, currentPage: p }">
+      <div>
+        <h5>
+          {{o.title}}
 
+        </h5>
+        <div class="row ">
+          <div class="col-md-6 " style="font-size:small;">
+            {{o.description}}
+          </div>
+          <div class="col-md-3">
+            <b>{{'offer.money'|translate}}</b><br />
+            {{o.declaredCost|number:'1.2-2'}} PLN
+          </div>
+          <div class="col-md-3">
+            <b>{{'offer.end'|translate}}</b><br />
+            {{o.endOfferDate | date : "dd.MM.yyyy" }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <b>{{'offer.addedBy'|translate}}</b><br />
+            {{o.addedBy?.username}}
+          </div>
+          <div class="col-md-3">
+           <b> {{'offer.cat'|translate}}</b><br />
+            {{o.category?.description}}
+          </div>
+          <div class="col-md-3">
+            <button class="btn-primary btn-primary btn-sm" *ngIf="canBid" (click)="bid(o.id)">{{'offer.details'|translate}} </button>
+
+          </div>
+        </div>
+        <div class="row" *ngIf="o.bidding">
+          <input class="form-control" type="number" step="0.01" id="bid" #bid  [(ngModel)]="cost"/><br />
+          <button class="btn-primary btn-primary btn-sm" (click)="applyFor(o.id)">{{'offer.offer'|translate}} </button>
+
+        </div>
+      </div>
+    </li>
+  </ul>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

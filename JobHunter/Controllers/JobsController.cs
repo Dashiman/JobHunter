@@ -31,6 +31,14 @@ namespace JobHunter.Controllers
             offer.Status = 1;
             var result = await _job.Add(offer);
             return Ok(result);
+        }   
+        [HttpPost("[action]")]
+        [Route("ApplyFor")]
+        public async Task<IActionResult> AddBid([FromBody]BidOffer offer)
+        {
+            offer.UserId = HttpContext.Session.GetInt32("userid");
+            var result = await _job.AddBid(offer);
+            return Ok(result);
         }
         [HttpPost("[action]")]
         [Route("GetOffers")]

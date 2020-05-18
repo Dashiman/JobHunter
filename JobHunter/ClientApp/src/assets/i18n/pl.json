@@ -30,7 +30,10 @@
     "desc": "Opis",
     "money": "Proponowana kwota",
     "add": "Dodaj",
-    "end": "Koniec oferty"
+    "end": "Koniec oferty",
+    "addedBy": "Dodane przez",
+    "details":"Zaoferuj",
+    "offer":"Zgłoś się!"
   },
   "errors": {
     "req": "Pole jest wymagane",

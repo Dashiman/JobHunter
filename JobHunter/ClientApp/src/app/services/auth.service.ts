@@ -29,6 +29,9 @@ export class AuthService {
   getAuthority(): Observable<number> {
     return this.http.get(this.baseUrl + "/api/auth/GetAuthority").pipe(map(res => { return res as number }));
   }
+  getUserId(): Observable<number> {
+    return this.http.get(this.baseUrl + "/api/auth/GetUserId").pipe(map(res => { return res as number }));
+  }
   getUserName(): Observable<session> {
     return this.http.get(this.baseUrl + "/api/auth/GetUsername").pipe(map(res => { return res as session}));
   }

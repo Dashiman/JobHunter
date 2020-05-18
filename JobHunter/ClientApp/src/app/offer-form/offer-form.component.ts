@@ -26,11 +26,11 @@ export class OfferFormComponent implements OnInit {
         this._router.navigate(["/login"]);
     })
     this.offerFG = this.fb.group({
-      title: new FormControl(this.offer.Title, [Validators.required]),
-      category: new FormControl(this.offer.CategoryId, [Validators.required]),
-      declaredCost: new FormControl(this.offer.DeclaredCost, [Validators.required]),
-      description: new FormControl(this.offer.Description, [Validators.required]),
-      endOffer: new FormControl(this.offer.EndOfferDate, [Validators.required]),
+      title: new FormControl(this.offer.title, [Validators.required]),
+      category: new FormControl(this.offer.categoryId, [Validators.required]),
+      declaredCost: new FormControl(this.offer.declaredCost, [Validators.required]),
+      description: new FormControl(this.offer.description, [Validators.required]),
+      endOffer: new FormControl(this.offer.endOfferDate, [Validators.required]),
 
     });
   }
@@ -46,11 +46,11 @@ export class OfferFormComponent implements OnInit {
       console.log(this.offerFG.controls.title.value)
       var offer = new JobOffer();
 
-      offer.Title = this.offerFG.controls.title.value;
-      offer.Description = this.offerFG.controls.description.value;
-      offer.CategoryId = this.offerFG.controls.category.value;
-      offer.DeclaredCost = this.offerFG.controls.declaredCost.value;
-      offer.EndOfferDate = this.offerFG.controls.endOffer.value;
+      offer.title = this.offerFG.controls.title.value;
+      offer.description = this.offerFG.controls.description.value;
+      offer.categoryId = this.offerFG.controls.category.value;
+      offer.declaredCost = this.offerFG.controls.declaredCost.value;
+      offer.endOfferDate = this.offerFG.controls.endOffer.value;
       this._job.add(offer).subscribe(res => {
         if (res == 1)
           this._router.navigate(['']);

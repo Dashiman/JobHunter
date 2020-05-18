@@ -19,6 +19,7 @@ import { OfferFormComponent } from './offer-form/offer-form.component';
 import { EditOfferComponent } from './edit-offer/edit-offer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ManyOffersComponent } from './many-offers/many-offers.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,7 @@ import { ManyOffersComponent } from './many-offers/many-offers.component';
     ProfileComponent,
     ManyOffersComponent
   ],
-  imports: [
+  imports: [NgxPaginationModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     TranslateModule.forRoot({
       loader: {

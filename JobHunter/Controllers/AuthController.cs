@@ -71,6 +71,19 @@ namespace JobHunter.Controllers
             return Ok(result);
         }
         [HttpGet("[action]")]
+        [Route("GetUserId")]
+        public async Task<IActionResult> GetUserId()
+        {
+
+            int? result;
+            if (HttpContext.Session.GetInt32("userid") != null)
+                result = HttpContext.Session.GetInt32("userid");
+            else
+                result = 0;
+
+            return Ok(result);
+        }
+        [HttpGet("[action]")]
         [Route("GetUsername")]
         public async Task<IActionResult> GetUsername()
         {
