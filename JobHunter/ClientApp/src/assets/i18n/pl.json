@@ -22,18 +22,23 @@
   },
   "nav": {
     "newOffer": "Dodaj zlecenie",
-    "manyOffers": "Dodaj wiele zleceń"
+    "manyOffers": "Dodaj wiele zleceń",
+    "profile": "Profil"
   },
   "offer": {
     "title": "Tytuł",
     "cat": "Kategoria",
     "desc": "Opis",
     "money": "Proponowana kwota",
-    "add": "Dodaj",
+    "add": "Zapisz",
+    "delete": "Usuń",
     "end": "Koniec oferty",
     "addedBy": "Dodane przez",
     "details":"Zaoferuj",
-    "offer":"Zgłoś się!"
+    "offer": "Zgłoś się!",
+    "lookup": "Szczegóły",
+    "bids": "Oferty",
+    "give": "Zleć"
   },
   "errors": {
     "req": "Pole jest wymagane",

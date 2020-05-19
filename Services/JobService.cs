@@ -14,7 +14,10 @@ namespace Services
         Task<int> Add(JobOffer job);
         Task<int> AddBid(BidOffer offer);
         Task<List<JobOffer>> GetAll();
-
+        Task<int> UpdateOffer(JobOffer edited);
+        Task<JobOffer> GetOffer(int offId);
+        Task<int> DeleteOffer(int offId);
+        Task<int> TakeJob(TakenOffer offer);
     }
 
     public class JobService:IJobService
@@ -59,6 +62,22 @@ namespace Services
             }
 
             return res;
+        }   
+        public async Task<int> TakeJob(TakenOffer offer)
+        {
+            int res = 0;
+            try
+            {   
+                await _db.TakenOffer.AddAsync(offer);
+                await _db.SaveChangesAsync();
+                return 1;
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+
+            return res;
         }
         public async Task<List<JobOffer>> GetAll()
         {
@@ -72,6 +91,69 @@ namespace Services
                     a.Category = await _db.Category.Where(x => x.Id == a.CategoryId).FirstOrDefaultAsync();
                 }
                 return res;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+
+            return res;
+        }
+        public async Task<JobOffer> GetOffer(int offId)
+        {
+            JobOffer res = new JobOffer();
+            try
+            {
+                res = await _db.JobOffer.Where(x => x.Id == offId).FirstOrDefaultAsync();
+                
+                    res.AddedBy = await _db.Users.Where(x => x.Id == res.AddedById).FirstOrDefaultAsync();
+                    res.Category = await _db.Category.Where(x => x.Id == res.CategoryId).FirstOrDefaultAsync();
+                res.BidOffers = await _db.BidOffer.Where(x => x.JobOfferId == res.Id).OrderBy(x=>x.Proposition).ToListAsync();
+                    return res;
+                
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+
+            return res;
+        }
+        public async Task<int> DeleteOffer(int offId)
+        {
+            int res =0;
+            try
+            {
+                 var off=await _db.JobOffer.Where(x => x.Id ==offId).FirstOrDefaultAsync();
+                 _db.JobOffer.Remove(off);
+                await _db.SaveChangesAsync();
+
+                return 1;
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+
+            return res;
+        }
+        public async Task<int> UpdateOffer(JobOffer edited)
+        {
+            int res = 0;
+            try
+            {
+                var off = await _db.JobOffer.Where(x => x.Id == edited.Id).FirstOrDefaultAsync();
+                if (off != null)
+                {
+                    _db.Entry(off).CurrentValues.SetValues(edited);
+                    _db.JobOffer.Update(off);
+                    await _db.SaveChangesAsync();
+                    return 1;
+                }
+
+                return 0;
+
             }
             catch (Exception ex)
             {

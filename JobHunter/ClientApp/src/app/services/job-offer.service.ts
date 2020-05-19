@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PlatformLocation } from '@angular/common';
-import { JobOffer } from '../models/jobOffer';
+import { JobOffer, TakenOffer } from '../models/jobOffer';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs/operators";
@@ -23,6 +23,20 @@ export class JobOfferService {
       }
     )
   }
+  giveJob(offer: TakenOffer): Observable<number> {
+    return this.http.post<number>(this.baseUrl + "/api/jobs/GiveJob", offer).pipe(
+      (res) => {
+        return res;
+      }
+    )
+  }
+  updateOffer(offer: JobOffer): Observable<number> {
+    return this.http.post<number>(this.baseUrl + "/api/jobs/EditOffer", offer).pipe(
+      (res) => {
+        return res;
+      }
+    )
+  }
   applyFor(BidOffer: BidOffer): Observable<number> {
     return this.http.post<number>(this.baseUrl + "/api/jobs/ApplyFor", BidOffer).pipe(
       (res) => {
@@ -39,5 +53,8 @@ export class JobOfferService {
     return this.http.get(this.baseUrl + "/api/jobs/GetOffer/" + offId).pipe(map(res => { return res as JobOffer }));
 
 
+  }
+  deleteOffer(offId: number): Observable<number> {
+    return this.http.delete(this.baseUrl + "/api/jobs/DeleteOffer/" + offId).pipe(map(res => { return res as number }));
   }
 }

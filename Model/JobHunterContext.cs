@@ -38,7 +38,8 @@ namespace Model
                 new Category { Id=2,Description="Budownictwo"},
                 new Category { Id=3,Description="Gastronomia"},
                 new Category { Id=4,Description="Ogrodnictwo"},
-                new Category { Id=5,Description= "Rolnictwo" }
+                new Category { Id=5,Description= "Rolnictwo" },
+                new Category { Id=6,Description= "Inne" }
                 
                 );
                 OnModelCreatingPartial(modelBuilder);

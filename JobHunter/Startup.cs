@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using Services;
 
 namespace JobHunter
@@ -34,7 +36,12 @@ namespace JobHunter
 
                 //builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                // Use the default property (Pascal) casing
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
             services.AddSession(options => { options.IdleTimeout = TimeSpan.FromMinutes(10); });
             //   services.AddMvc();
             services.AddDbContext<JobHunterContext>(options =>

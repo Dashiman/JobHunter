@@ -54,10 +54,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
       { path: 'listOfOffers', component: OfferlistComponent },
       { path: 'newUser', component: RegisterComponent },
       { path: 'signIn', component: LoginComponent },
-      { path: 'offer/:id', component: OfferDetailsComponent },
+      { path: 'offer/:id', component: OfferDetailsComponent, canActivate: [AuthGuard]},
       { path: 'newOffer', component: NewOfferComponent ,canActivate:[AuthGuard]},
-      { path: 'editOffer', component: EditOfferComponent },
-      { path: 'user/:id', component: EditOfferComponent },
+      { path: 'editOffer', component: EditOfferComponent, canActivate: [AuthGuard] },
+      { path: 'user/:id', component: ProfileComponent, canActivate: [AuthGuard] },
     ])
   ],
   providers: [AuthGuard],

@@ -14,6 +14,7 @@ export class NavMenuComponent {
   username: string;
   lang:string;
   requestCount:number;
+  userId:number;
   isLoggedIn: boolean;
   constructor(private translate: TranslateService, private _auth: AuthService, private _router: Router) {
     translate.setDefaultLang('pl');
@@ -66,5 +67,11 @@ export class NavMenuComponent {
 
   toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+  goProfile() {
+    this._auth.getUserId().subscribe(res => {
+      this.userId = res
+      this._router.navigate(['user/' + this.userId])
+    })
   }
 }

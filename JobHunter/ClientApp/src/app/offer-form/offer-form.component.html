@@ -4,7 +4,7 @@
       <label for="text" class="col-md-4 col-form-label text-md-right">{{'offer.title'|translate}}</label>
       <div class="col-md-6">
         <div class="md-form form-sm">
-          <input [ngModel]="offer.Title" type="text" formControlName="title" id="title" name="title" class="form-control" />
+          <input type="text" formControlName="title" id="title" name="title" class="form-control" />
           <div *ngIf="title.invalid && (title.dirty || title.touched)"class="alert alert-danger">
 
             <div *ngIf="title.errors.required">
@@ -17,7 +17,7 @@
     <div class=" row mt-3">
       <label for="text" class="col-md-4 col-form-label text-md-right">{{'offer.desc'|translate}}</label>
       <div class="col-md-6">
-        <textarea [ngModel]="offer.Description" formControlName="description" id="description" name="description" class="form-control"></textarea>
+        <textarea formControlName="description" id="description" name="description" class="form-control"></textarea>
         <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
 
           <div *ngIf="description.errors.required">
@@ -29,7 +29,7 @@
     <div class=" row mt-3">
       <label for="text" class="col-md-4 col-form-label text-md-right">{{'offer.money'|translate}}</label>
       <div class="col-md-6">
-        <input [ngModel]="offer.DeclaredCost" type="number" step="0.01" formControlName="declaredCost" id="declaredCost" name="declaredCost" class="form-control" />
+        <input  type="number" step="0.01" formControlName="declaredCost" id="declaredCost" name="declaredCost" class="form-control" />
         <div *ngIf="declaredCost.invalid && (declaredCost.dirty || declaredCost.touched)" class="alert alert-danger">
 
           <div *ngIf="declaredCost.errors.required">
@@ -41,7 +41,7 @@
     <div class=" row mt-3">
       <label for="text" class="col-md-4 col-form-label text-md-right">{{'offer.end'|translate}}</label>
       <div class="col-md-6">
-        <input [ngModel]="offer.DeclaredCost" type="date" formControlName="endOffer" id="endOffer" name="endOffer" class="form-control" />
+        <input  type="date" formControlName="endOffer" id="endOffer" name="endOffer" class="form-control" />
         <div *ngIf="endOffer.invalid && (endOffer.dirty || endOffer.touched)" class="alert alert-danger">
 
           <div *ngIf="endOffer.errors.required">
@@ -53,12 +53,13 @@
     <div class=" row mt-3">
       <label for="text" class="col-md-4 col-form-label text-md-right">{{'offer.cat'|translate}}</label>
       <div class="col-md-6">
-        <select [ngModel]="offer.CategoryId" formControlName="category" class="form-control" id="categorySel">
+        <select formControlName="category" class="form-control" id="categorySel">
           <option value="1">IT</option>
           <option value="2">Budownictwo</option>
           <option value="3">Gastronomia</option>
           <option value="4">Ogrodnictwo</option>
           <option value="5">Rolnictwo</option>
+          <option value="6">Inne</option>
         </select>
         <div *ngIf="category.invalid && (category.dirty || category.touched)" class="alert alert-danger">
 
@@ -75,7 +76,8 @@
     </div>
     <div class="form-group row mb-0 justify-content-center">
       <div class="col-md-8 offset-md-4">
-        <button (click)="addOffer()" class="btn btn-primary login_btn">{{'offer.add'|translate}}</button>
+        <button (click)="addOffer()" class="btn btn-primary login_btn">{{'offer.add'|translate}}</button><br /><br />
+        <button *ngIf="offer.edited" (click)="delete()" class="btn btn-primary login_btn">{{'offer.delete'|translate}}</button><br /><br />
       </div>
     </div>
   </div>

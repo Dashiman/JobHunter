@@ -16,8 +16,8 @@ public endOfferDate :Date;
   public category: Category;
 
 public bidOffers:BidOffer[];
-public endedAs :number;
-
+  public endedAs: number;
+  public edited: boolean;
 
   public bidding:boolean
 }

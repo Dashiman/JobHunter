@@ -18,7 +18,7 @@ export class NewOfferComponent implements OnInit {
   ngOnInit() {
     this._authService.isLoggedIn().subscribe(res => {
       if (res == false)
-        this._router.navigate(["/login"]);
+      this._router.navigate(["/signIn"]);
     })
 
   }

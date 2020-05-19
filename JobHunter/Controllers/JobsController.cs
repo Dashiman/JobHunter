@@ -23,6 +23,14 @@ namespace JobHunter.Controllers
         }
 
 
+        [HttpPut("[action]")]
+        [Route("EditOffer")]
+        public async Task<IActionResult> EditOffer([FromBody]JobOffer offer)
+        {
+            
+            var result = await _job.UpdateOffer(offer);
+            return Ok(result);
+        }  
         [HttpPost("[action]")]
         [Route("AddOffer")]
         public async Task<IActionResult> AddNewOffer([FromBody]JobOffer offer)
@@ -33,20 +41,44 @@ namespace JobHunter.Controllers
             return Ok(result);
         }   
         [HttpPost("[action]")]
+        [Route("GiveJob")]
+        public async Task<IActionResult> TakeJob([FromBody]TakenOffer offer)
+        {
+
+            var result = await _job.TakeJob(offer);
+            return Ok(result);
+        }
+        [HttpPost("[action]")]
         [Route("ApplyFor")]
         public async Task<IActionResult> AddBid([FromBody]BidOffer offer)
         {
             offer.UserId = HttpContext.Session.GetInt32("userid");
             var result = await _job.AddBid(offer);
             return Ok(result);
+        } 
+        [HttpDelete("[action]")]
+        [Route("DeleteOffer/{offId:int}")]
+        public async Task<IActionResult> DeleteOffer(int offId)
+        {
+            var result = await _job.DeleteOffer(offId);
+            return Ok(result);
         }
-        [HttpPost("[action]")]
+        [HttpGet]
         [Route("GetOffers")]
         public async Task<IActionResult> GetList()
         {
           
             var result = await _job.GetAll();
             return Ok(result);
+        }  
+        [HttpGet]
+        [Route("GetOffer/{id:int}")]
+        public async Task<IActionResult> GetOffer(int id)
+        {
+          
+            var result = await _job.GetOffer(id);
+            return Ok(result);
         }
+
     }
 }

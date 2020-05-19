@@ -1,0 +1,277 @@
+2020-05-19T08:16:01.9730533+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T08:16:01.9843947+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T08:16:01.9851352+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T08:16:13.4401500+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T08:16:39.7733854+02:00 8000017f-0002-e900-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T08:16:39.7755855+02:00 8000017f-0002-e900-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T08:16:39.7756544+02:00 8000017f-0002-e900-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T08:54:23.5243020+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T08:54:23.5339614+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T08:54:23.5340925+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T08:54:30.3376475+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T08:54:52.7539063+02:00 800001ce-0002-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T08:54:52.7572025+02:00 800001ce-0002-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T08:54:52.7573741+02:00 800001ce-0002-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T09:25:54.0607339+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T09:25:54.0728755+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T09:25:54.0730042+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T09:26:03.5385547+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T09:26:27.5391491+02:00 800000b3-0000-aa00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T09:26:27.5424401+02:00 800000b3-0000-aa00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T09:26:27.5426080+02:00 800000b3-0000-aa00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T09:46:42.1449271+02:00 800001a9-0001-bf00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'user' with type 'Model.Users'. Path 'addedBy.bids[0]'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Serialize(JsonWriter jsonWriter, Object value)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|21_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-19T09:47:47.7344064+02:00 800001c9-0000-ab00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Newtonsoft.Json.JsonSerializationException: Self referencing loop detected for property 'user' with type 'Model.Users'. Path 'addedBy.bids[0]'.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CheckForCircularReference(JsonWriter writer, Object value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract& memberContract, Object& memberValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalWriter.Serialize(JsonWriter jsonWriter, Object value, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.SerializeInternal(JsonWriter jsonWriter, Object value, Type objectType)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|21_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-05-19T09:51:52.5273524+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T09:51:52.5494596+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T09:51:52.5495532+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T09:51:59.1214965+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T09:52:20.0178899+02:00 800001cf-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T09:52:20.0201554+02:00 800001cf-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T09:52:20.0202886+02:00 800001cf-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T10:45:38.5403346+02:00  [ERR] ERROR in app/new-offer/new-offer.component.ts:21:7 - error TS1005: ')' expected.
+
+21       this._router.navigate(["/signIn"]);
+         ~~~~
+
+ (e85cfd61)
+2020-05-19T10:48:42.1305436+02:00  [ERR]     ERROR in src/app/offer-form/offer-form.component.ts(18,3): error TS1329: 'Input' accepts too few arguments to be used as a decorator here. Did you mean to call it first and write '@Input()'?
+    
+ (54c207fe)
+2020-05-19T11:57:38.8102641+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T11:57:38.8190206+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T11:57:38.8191295+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T11:57:48.0449989+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T11:58:12.1368327+02:00 80000398-0002-fb00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T11:58:12.1390251+02:00 80000398-0002-fb00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T11:58:12.1391261+02:00 80000398-0002-fb00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:00:27.0775673+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T12:00:27.1286308+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T12:00:27.1287243+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T12:00:33.8713269+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T12:00:57.4253409+02:00 80000194-0001-c000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:00:57.4297162+02:00 80000194-0001-c000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:00:57.4298139+02:00 80000194-0001-c000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:09:44.6362714+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T12:09:44.6455123+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T12:09:44.6456074+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T12:09:50.5420659+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T12:10:14.1059147+02:00 800003ae-0002-fb00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:10:14.1084655+02:00 800003ae-0002-fb00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:10:14.1086314+02:00 800003ae-0002-fb00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:41:50.6093994+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T12:41:50.6184285+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T12:41:50.6185423+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T12:42:00.9529355+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T12:42:25.0213218+02:00 80000219-0000-aa00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:42:25.0253489+02:00 80000219-0000-aa00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:42:25.0254380+02:00 80000219-0000-aa00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:44:22.3657106+02:00 8000018f-0003-ef00-b63f-84710c7967bb [ERR] The instance of entity type 'JobOffer' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. (a68e08fb)
+2020-05-19T12:44:32.5120224+02:00 80000195-0000-a700-b63f-84710c7967bb [ERR] The instance of entity type 'JobOffer' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. (a68e08fb)
+2020-05-19T12:44:46.2369185+02:00 80000191-0003-ef00-b63f-84710c7967bb [ERR] The instance of entity type 'JobOffer' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. (a68e08fb)
+2020-05-19T12:45:12.9009449+02:00 800005d5-0001-d500-b63f-84710c7967bb [ERR] The instance of entity type 'JobOffer' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. (a68e08fb)
+2020-05-19T12:45:13.3268857+02:00 80000284-0001-bf00-b63f-84710c7967bb [ERR] The instance of entity type 'JobOffer' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. (a68e08fb)
+2020-05-19T12:45:13.9247239+02:00 800001d9-0002-f900-b63f-84710c7967bb [ERR] The instance of entity type 'JobOffer' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values. (a68e08fb)
+2020-05-19T12:47:11.0989196+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T12:47:11.1139715+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T12:47:11.1140866+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T12:47:18.2945545+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T12:47:41.2967995+02:00 800001b0-0003-f300-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:47:41.2995296+02:00 800001b0-0003-f300-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T12:47:41.2996409+02:00 800001b0-0003-f300-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T13:17:32.1377481+02:00  [ERR]     ERROR in src/app/offer-details/offer-details.component.ts(61,14): error TS2339: Property 'giveJob' does not exist on type 'JobOfferService'.
+    
+ (6fe63195)
+2020-05-19T13:22:12.7489204+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-19T13:22:12.7586509+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-19T13:22:12.7588816+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-19T13:22:17.3698410+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-19T13:22:41.1006636+02:00 800001db-0003-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T13:22:41.1030941+02:00 800001db-0003-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T13:22:41.1032912+02:00 800001db-0003-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-19T13:25:03.1709996+02:00  [ERR]     ERROR in src/app/offer-details/offer-details.component.ts(59,29): error TS2551: Property 'UserId' does not exist on type 'BidOffer'. Did you mean 'userId'?
+    src/app/offer-details/offer-details.component.ts(60,32): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (683445a4)
+2020-05-19T13:25:05.5995136+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:25:44.8391840+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:27:04.4551214+02:00 80000378-0001-d600-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.AggregateException: One or more errors occurred. (The remote party closed the WebSocket connection without completing the close handshake.)
+ ---> System.Net.WebSockets.WebSocketException (0x80004005): The remote party closed the WebSocket connection without completing the close handshake.
+ ---> Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): Próbowano wykonać operację na nieistniejącym połączeniu sieciowym. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.WebSockets.ManagedWebSocket.EnsureBufferContainsAsync(Int32 minimumRequiredBytes, CancellationToken cancellationToken, Boolean throwOnPrematureClosure)
+   at System.Net.WebSockets.ManagedWebSocket.ReceiveAsyncPrivate[TWebSocketReceiveResultGetter,TWebSocketReceiveResult](Memory`1 payloadBuffer, CancellationToken cancellationToken, TWebSocketReceiveResultGetter resultGetter)
+   at System.Net.WebSockets.ManagedWebSocket.ReceiveAsyncPrivate[TWebSocketReceiveResultGetter,TWebSocketReceiveResult](Memory`1 payloadBuffer, CancellationToken cancellationToken, TWebSocketReceiveResultGetter resultGetter)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PumpWebSocket(WebSocket source, WebSocket destination, Int32 bufferSize, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.AcceptProxyWebSocketRequest(HttpContext context, Uri destinationUri, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2020-05-19T13:27:04.4553849+02:00 80000378-0001-d600-b63f-84710c7967bb [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2020-05-19T13:27:04.4576357+02:00 80000378-0001-d600-b63f-84710c7967bb [ERR] Connection ID ""15420325130022159223"", Request ID ""80000378-0001-d600-b63f-84710c7967bb"": An unhandled exception was thrown by the application. (bf316047)
+System.AggregateException: One or more errors occurred. (The remote party closed the WebSocket connection without completing the close handshake.)
+ ---> System.Net.WebSockets.WebSocketException (0x80004005): The remote party closed the WebSocket connection without completing the close handshake.
+ ---> Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): Próbowano wykonać operację na nieistniejącym połączeniu sieciowym. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.WebSockets.ManagedWebSocket.EnsureBufferContainsAsync(Int32 minimumRequiredBytes, CancellationToken cancellationToken, Boolean throwOnPrematureClosure)
+   at System.Net.WebSockets.ManagedWebSocket.ReceiveAsyncPrivate[TWebSocketReceiveResultGetter,TWebSocketReceiveResult](Memory`1 payloadBuffer, CancellationToken cancellationToken, TWebSocketReceiveResultGetter resultGetter)
+   at System.Net.WebSockets.ManagedWebSocket.ReceiveAsyncPrivate[TWebSocketReceiveResultGetter,TWebSocketReceiveResult](Memory`1 payloadBuffer, CancellationToken cancellationToken, TWebSocketReceiveResultGetter resultGetter)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PumpWebSocket(WebSocket source, WebSocket destination, Int32 bufferSize, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.AcceptProxyWebSocketRequest(HttpContext context, Uri destinationUri, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2020-05-19T13:27:34.5970010+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:32:08.8345932+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:34:50.3874541+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:35:53.3752056+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:37:03.9091287+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:46:23.5320873+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:46:46.6148727+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)
+2020-05-19T13:46:48.0323420+02:00  [ERR]     ERROR in src/app/offerlist/offerlist.component.ts(41,11): error TS2551: Property 'JobOfferId' does not exist on type 'BidOffer'. Did you mean 'jobOfferId'?
+    src/app/offerlist/offerlist.component.ts(42,11): error TS2551: Property 'OfferDate' does not exist on type 'BidOffer'. Did you mean 'offerDate'?
+    src/app/offerlist/offerlist.component.ts(43,11): error TS2551: Property 'Proposition' does not exist on type 'BidOffer'. Did you mean 'proposition'?
+    
+ (dc1505cf)

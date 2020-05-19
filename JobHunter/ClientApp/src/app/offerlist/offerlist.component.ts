@@ -3,6 +3,7 @@ import { JobOffer } from '../models/jobOffer';
 import { JobOfferService } from '../services/job-offer.service';
 import { BidOffer } from '../models/BidOffer';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offerlist',
@@ -13,12 +14,14 @@ export class OfferlistComponent implements OnInit {
   loading: boolean;
   p: number = 1;
   cost: number;
+  userId: number;
   offer: JobOffer[];
   canBid: boolean;
-  constructor(private job: JobOfferService, private auth: AuthService) {
+  constructor(private job: JobOfferService, private auth: AuthService, private route: Router) {
     this.offer = [];
     this.loading = true;
     this.cost = 0;
+    this.userId = 0;
     this.canBid = false;
   }
 
@@ -29,6 +32,7 @@ export class OfferlistComponent implements OnInit {
       this.loading = false;
     })
     this.auth.isLoggedIn().subscribe(res => this.canBid = res);
+    this.auth.getUserId().subscribe(res => this.userId = res);
   }
   applyFor(offerId: number) {
     if (this.cost != 0 ) {
@@ -55,5 +59,9 @@ export class OfferlistComponent implements OnInit {
 
 
     })
+ 
+  }
+  showDetails(offerId: number) {
+    this.route.navigate(['offer/' + offerId])
   }
 }

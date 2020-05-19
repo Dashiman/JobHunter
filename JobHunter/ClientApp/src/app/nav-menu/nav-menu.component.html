@@ -2,7 +2,7 @@
   <nav
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">JobHunter</a>
+      <a class="navbar-brand" [routerLink]="['/']">CourseHunter</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -21,6 +21,11 @@
           <li *ngIf="!isLoggedIn" class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/signIn']">
               {{'login.login'|translate}}
+            </a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a *ngIf="isLoggedIn" style="cursor:pointer" class="nav-link text-dark" (click)="goProfile()">
+              {{'nav.profile'|translate}}
             </a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
