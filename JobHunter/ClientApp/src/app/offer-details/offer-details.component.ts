@@ -52,17 +52,20 @@ export class OfferDetailsComponent implements OnInit {
   }
   giveJob(offer: BidOffer) {
     console.log(offer)
-    var taken = new TakenOffer();
-    taken.addedById = this.offer.addedById;
-    taken.description = this.offer.description;
-    taken.title = this.offer.title;
-    taken.status = 1;
-    taken.takenById = offer.userId;
-    taken.declaredCost = offer.proposition;
-    this.job.giveJob(taken).subscribe(res => {
+    var jobid = offer.jobOfferId;
+    //var taken = new TakenOffer();
+    //taken.addedById = this.offer.addedById;
+    //taken.description = this.offer.description;
+    //taken.title = this.offer.title;
+    //taken.status = 1;
+    //taken.takenById = offer.userId;
+    //taken.declaredCost = offer.proposition;
+    this.job.giveJob(offer).subscribe(res => {
       if (res == 1) {
-        alert("Zlecono pomyślnie")
-        this.router.navigate([''])
+          alert("Zlecono pomyślnie")
+          this.router.navigate([''])
+
+
       }
     })
   }

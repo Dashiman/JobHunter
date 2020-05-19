@@ -18,14 +18,16 @@ var Category = /** @class */ (function () {
     return Category;
 }());
 exports.Category = Category;
+var EndModel = /** @class */ (function () {
+    function EndModel() {
+    }
+    return EndModel;
+}());
+exports.EndModel = EndModel;
 /*
  JobOffer
  1- do wzięcia
  2- wzięte
-
-Taken Offer
-1- w trakcie realizacji
-2- przerwane
 3- zakończone z rekomendacją
 4- zakończone
 5 - zakończone z "reklamacją"

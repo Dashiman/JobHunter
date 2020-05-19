@@ -37,14 +37,14 @@ export class Category {
   public id: number;
   public description: string;
 }
+export class EndModel {
+  public offerId: number;
+  public statusId: number;
+}
 /*
  JobOffer
  1- do wzięcia
  2- wzięte
-
-Taken Offer
-1- w trakcie realizacji
-2- przerwane
 3- zakończone z rekomendacją
 4- zakończone
 5 - zakończone z "reklamacją"

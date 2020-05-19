@@ -4,10 +4,138 @@
   <div class="row justify-content-center">
     <div class="col-md-10">
       <div class="card">
-        <div class="card-header">{{'nav.profile'|translate}}</div>
+        <div class="card-header">{{'offer.yt'|translate}}</div>
+        <div *ngIf="!loading" class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let o of profileData.addedByUser">
+              <div>
+                <h5>
+                  {{o.title}}
+
+                </h5>
+                <div class="row ">
+                  <div class="col-md-6 " style="font-size:small;">
+                    {{o.description}}
+                  </div>
+                  <div class="col-md-3">
+                    <b>{{'offer.money'|translate}}</b><br />
+                    {{o.declaredCost|number:'1.2-2'}} PLN
+                  </div>
+                  <div class="col-md-3">
+                    <b>{{'offer.end'|translate}}</b><br />
+                    {{o.endOfferDate | date : "dd.MM.yyyy" }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <b> {{'offer.cat'|translate}}</b><br />
+                    {{o.category?.description}}
+                  </div>
+                  <div class="col-md-6">
+                    <button class="btn-primary btn-primary btn-sm" (click)="showDetails(o.id)">{{'offer.lookup'|translate}} </button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">{{'offer.mt'|translate}}</div>
         <div *ngIf="!loading" class="card-body">
 
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let o of profileData.takenbyUser">
+              <div>
+                <h5>
+                  {{o.title}}
 
+                </h5>
+                <div class="row ">
+                  <div class="col-md-6 " style="font-size:small;">
+                    {{o.description}}
+                  </div>
+                  <div class="col-md-3">
+                    <b>{{'offer.money'|translate}}</b><br />
+                    {{o.declaredCost|number:'1.2-2'}} PLN
+                  </div>
+                  <div class="col-md-3">
+                    <b>{{'offer.end'|translate}}</b><br />
+                    {{o.endOfferDate | date : "dd.MM.yyyy" }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <b> {{'offer.cat'|translate}}</b><br />
+                    {{o.category?.description}}
+                  </div>
+                </div>
+              </div>
+          </ul>
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">{{'offer.active'|translate}}</div>
+        <div *ngIf="!loading" class="card-body">
+
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let o of profileData.addandTaken">
+              <div>
+                <h5>
+                  {{o.title}}
+
+                </h5>
+                <div class="row ">
+                  <div class="col-md-6 " style="font-size:small;">
+                    {{o.description}}
+                  </div>
+                  <div class="col-md-3">
+                    <b>{{'offer.money'|translate}}</b><br />
+                    {{o.declaredCost|number:'1.2-2'}} PLN
+                  </div>
+                  <div class="col-md-3">
+                    <b>{{'offer.end'|translate}}</b><br />
+                    {{o.endOfferDate | date : "dd.MM.yyyy" }}
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <b> {{'offer.cat'|translate}}</b><br />
+                    {{o.category?.description}}
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form [formGroup]="endFg">
+                          <select formControlName="endSelect" class="form-control" id="status">
+
+                            <option value="3">{{'offer.recommend'|translate}}</option>
+                            <option value="4">{{'offer.ended'|translate}}</option>
+                            <option value="5">{{'offer.reclamation'|translate}}</option>
+                          </select>
+                          <div *ngIf="endSelect.invalid && (endSelect.dirty || endSelect.touched)" class="alert alert-danger">
+
+                            <div *ngIf="endSelect.errors.required">
+                              {{'errors.req'|translate}}
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div style="margin-top:15px;" class="row justify-content-center">
+                      <div class="col-md-12">
+                        <button class="btn-primary btn-primary btn-sm" (click)="endCourse(o.id)">{{'offer.endAs'|translate}} </button>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
 
         </div>
       </div>

@@ -38,7 +38,15 @@
     "offer": "Zgłoś się!",
     "lookup": "Szczegóły",
     "bids": "Oferty",
-    "give": "Zleć"
+    "give": "Zleć",
+    "yt": "Twoje zlecenia",
+    "mt": "Przyjęte przez Ciebie zlecenia",
+    "active": "Twoje wykonywane dodane zlecenia",
+    "endAs": "Zakończ kurs",
+    "recommend": "Zakończone z rekomendacją",
+    "ended": "Zakończone",
+    "reclamation": "Zakończone z reklamacją",
+    "upload": "Dodaj wiele kursów"
   },
   "errors": {
     "req": "Pole jest wymagane",

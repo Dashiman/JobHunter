@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using CsvHelper.Configuration;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 using Services;
+using Services.VM;
 
 namespace JobHunter.Controllers
 {
@@ -31,6 +37,14 @@ namespace JobHunter.Controllers
             var result = await _job.UpdateOffer(offer);
             return Ok(result);
         }  
+        [HttpPut("[action]")]
+        [Route("CloseCourse")]
+        public async Task<IActionResult> EndCourse([FromBody]EndModel offer)
+        {
+            
+            var result = await _job.EndCourse(offer);
+            return Ok(result);
+        }  
         [HttpPost("[action]")]
         [Route("AddOffer")]
         public async Task<IActionResult> AddNewOffer([FromBody]JobOffer offer)
@@ -42,7 +56,7 @@ namespace JobHunter.Controllers
         }   
         [HttpPost("[action]")]
         [Route("GiveJob")]
-        public async Task<IActionResult> TakeJob([FromBody]TakenOffer offer)
+        public async Task<IActionResult> TakeJob([FromBody]BidOffer offer)
         {
 
             var result = await _job.TakeJob(offer);
@@ -55,6 +69,32 @@ namespace JobHunter.Controllers
             offer.UserId = HttpContext.Session.GetInt32("userid");
             var result = await _job.AddBid(offer);
             return Ok(result);
+        }
+        [HttpPost("[action]"), DisableRequestSizeLimit]
+        [Route("Upload")]
+        public async Task<IActionResult> AddManyOffers()
+        {
+            var file = Request.Form.Files[0];
+
+            using (var reader = file.OpenReadStream())
+            using (var csv = new CsvReader(new StreamReader(reader), CultureInfo.InvariantCulture))
+            {
+                csv.Configuration.RegisterClassMap<JobMap>();
+                csv.Configuration.Delimiter = ";";
+                csv.Configuration.Encoding = Encoding.Default; 
+                csv.Configuration.HasHeaderRecord = true;
+                csv.Configuration.IncludePrivateMembers = true;
+                var UserId = HttpContext.Session.GetInt32("userid");
+
+                var records = csv.GetRecords<JobOffer>();
+                foreach(var t in records)
+                {
+                    t.AddedById =(int) UserId;
+                     _job.Add(t);
+                }
+            }
+
+            return Ok(1);
         } 
         [HttpDelete("[action]")]
         [Route("DeleteOffer/{offId:int}")]
@@ -79,6 +119,25 @@ namespace JobHunter.Controllers
             var result = await _job.GetOffer(id);
             return Ok(result);
         }
+        [HttpGet]
+        [Route("GetPD/{id:int}")]
+        public async Task<IActionResult> GetProfileData(int id)
+        {
+          
+            var result = await _job.GetProfileData(id);
+            return Ok(result);
+        }
 
+    }
+    public class JobMap : ClassMap<JobOffer>
+    {
+        public JobMap()
+        {
+            Map(m => m.DeclaredCost).Index(2).TypeConverterOption.CultureInfo(new CultureInfo("pl-PL"));
+            Map(m => m.Description).Index(1);
+            Map(m => m.EndOfferDate).Index(3);
+            Map(m => m.Title).Index(0);
+            Map(m => m.CategoryId).Index(4);
+        }
     }
 }

@@ -38,9 +38,9 @@ export class OfferlistComponent implements OnInit {
     if (this.cost != 0 ) {
       console.log(this.cost)
       var bid = new BidOffer();
-      bid.JobOfferId = offerId;
-      bid.OfferDate = new Date();
-      bid.Proposition = this.cost;
+      bid.jobOfferId = offerId;
+      bid.offerDate = new Date();
+      bid.proposition = this.cost;
       this.job.applyFor(bid).subscribe(res => {
         if (res == 1)
           alert("Sukces")

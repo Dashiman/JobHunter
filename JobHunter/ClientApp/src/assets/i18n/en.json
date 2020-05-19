@@ -17,12 +17,39 @@
     "register": "Register",
     "username": "Username",
     "yourName": "Welcome, ",
-    "title": "Login panel"
+    "email": "Adres e-mail",
+    "title": "Email address"
   },
   "nav": {
     "newOffer": "Dodaj zlecenie",
-   "manyOffers": "Add many offers"
+    "manyOffers": "Add many offers",
+    "profile": "Profile"
 
+  },
+  "offer": {
+    "title": "Title",
+    "cat": "Category",
+    "desc": "Description",
+    "money": "Proposed cost",
+    "add": "Save",
+    "delete": "Delete",
+    "end": "End of course",
+    "addedBy": "Added by",
+    "details": "Offer",
+    "offer": "Hand up!",
+    "lookup": "Details",
+    "bids": "Offers",
+    "give": "Hire",
+    "yt": "Your course offers",
+    "mt": "Your taken courses",
+    "active": "Courses you're leading",
+    "endAs": "End course",
+    "recommend": "Ended with recommendation",
+    "ended": "Ended",
+    "reclamation": "Ended with complaint"
+  },
+  "errors": {
+    "req": "Field is required",
+    "jobAddErr": "Error during course addition"
   }
-
 }
