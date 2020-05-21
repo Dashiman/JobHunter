@@ -90,6 +90,7 @@ namespace JobHunter.Controllers
                 foreach(var t in records)
                 {
                     t.AddedById =(int) UserId;
+                    t.Status =1;
                      _job.Add(t);
                 }
             }
