@@ -19,6 +19,7 @@ namespace JobHunterTests
         {
             user = new Users {Username = "Testowiec", Authority = 1, Email = "damian@damian", Firstname = "Testowiec", Lastname = "Testowy" ,Password="123"};
             services.AddTransient<IRegistrationService, RegistrationService>();
+            //services.AddDbContext<JobHunterContext>(options => options.UseInMemoryDatabase("jobhunter"));
 
             services.AddDbContext<JobHunterContext>(options => options.UseSqlServer("Server=localhost;Initial Catalog=jobhunter;Integrated Security=true;"));
                 sp = services.AddLogging().BuildServiceProvider();
