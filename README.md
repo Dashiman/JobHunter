@@ -1,13 +1,13 @@
 # JobHunter - UnitTests
-##Description
+## Description
 Project JobHunterTests contains a set of unit tests for 3 services of JobHunter .NetCore 3.1 and Angular 8 applicaiton. 
-Tests checks authorization, registration and main part of the app - job service. Project is using created db context for the appplication. Tester can use migration tool to create real database or use it in memory, but this is not recommended becouse it's not relational and can provide problems. Tests are using predefined data from app assumptions sometimes.
+Tests checks authorization, registration and main part of the app - job service. Project is using created db context for the appplication. Tester can use migration tool to create real database or use it in memory, but this is not recommended becouse it's not relational and can provide problems. Tests are using predefined data from app assumptions sometimes. Test class constructors is using a service provider for importing services interfaces. All methods in the app are asynchronous.  
 
 ATTENTION!
 A few tests don't works when all tests are running. Required running it separately. 
 ## SetUp
 ### Real database
-1. MsSql Server is required.
+1. MsSql Server, and .NetCore 3.1 are required.
 2. Create database for app. 
 3. You need to set Model project as startup. 
 4. Change connection string in JobHunterContext. 
