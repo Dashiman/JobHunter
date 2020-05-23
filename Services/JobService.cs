@@ -38,12 +38,14 @@ namespace Services
             int res = 0;
             try
             {
+               
                 _db.JobOffer.Add(job);
                 await _db.JobOffer.AddAsync(job);
                 await _db.SaveChangesAsync();
                 return 1;
+            
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
             }
