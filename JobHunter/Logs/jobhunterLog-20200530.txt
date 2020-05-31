@@ -1,0 +1,8 @@
+2020-05-30T11:05:23.7574420+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-30T11:05:23.7900597+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-30T11:05:23.7914456+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-05-30T11:05:33.6020202+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-05-30T11:05:57.8643381+02:00 800003ae-0002-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-30T11:05:57.8663456+02:00 800003ae-0002-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-05-30T11:05:57.8664271+02:00 800003ae-0002-ef00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)

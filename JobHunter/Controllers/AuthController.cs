@@ -42,6 +42,19 @@ namespace JobHunter.Controllers
 
             return Ok(result);
         }
+        [HttpPost("[action]")]
+        [Route("LoginIonic")]
+        public async Task<IActionResult> LoginIonic([FromBody]Users user)
+        {
+            var us = new Users();
+            var result = await _authService.Login(user);
+            if (result == 1)
+            {
+                us = await _authService.GetSessionData(user);
+            }
+
+            return Ok(us);
+        }
         [HttpGet("[action]")]
         [Route("CanAccess")]
         public async Task<IActionResult> CanAccess()
