@@ -77,7 +77,7 @@
     <div class="form-group row mb-0 justify-content-center">
       <div class="col-md-8 offset-md-4">
         <button (click)="addOffer()" class="btn btn-primary login_btn">{{'offer.add'|translate}}</button><br /><br />
-        <button *ngIf="offer.edited" (click)="delete()" class="btn btn-primary login_btn">{{'offer.delete'|translate}}</button><br /><br />
+        <button *ngIf="offer.edited&&!offer.editing" (click)="delete()" class="btn btn-primary login_btn">{{'offer.delete'|translate}}</button><br /><br />
       </div>
     </div>
   </div>

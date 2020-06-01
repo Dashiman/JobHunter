@@ -4,6 +4,7 @@ import { JobOfferService } from '../services/job-offer.service';
 import { BidOffer } from '../models/BidOffer';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-offerlist',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class OfferlistComponent implements OnInit {
   loading: boolean;
+  offerEd: JobOffer = new JobOffer();
+  editFG: FormGroup
   p: number = 1;
   cost: number;
   userId: number;
@@ -28,7 +31,10 @@ export class OfferlistComponent implements OnInit {
   ngOnInit() {
     this.job.get().subscribe(res => {
       this.offer = res;
-      this.offer.forEach(x => x.bidding = false)
+      this.offer.forEach(x => {
+        x.bidding = false;
+        x.editing = false;
+      })
       this.loading = false;
     })
     this.auth.isLoggedIn().subscribe(res => this.canBid = res);
@@ -63,5 +69,30 @@ export class OfferlistComponent implements OnInit {
   }
   showDetails(offerId: number) {
     this.route.navigate(['offer/' + offerId])
+  }
+  editCourse(courseOffer: JobOffer) {
+
+    var index = this.offer.findIndex(x => x.id == courseOffer.id);
+    if (this.offer[index].editing != true) {
+      this.offer[index].editing = true;
+      this.offer[index].edited = true;
+    }
+    else
+      this.offer[index].editing = false;;
+
+  }
+  seteditFG(event: FormGroup): void {
+    this.editFG = event;
+  }
+
+  setOffer(offer: JobOffer): void {
+
+    var offoutput = offer;
+    offoutput.edited = false;
+    offoutput.editing = false;
+    var index = this.offer.findIndex(x => x.id == offer.id);
+
+    this.offer[index] = offoutput;
+
   }
 }

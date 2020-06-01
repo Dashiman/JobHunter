@@ -66,7 +66,7 @@ export class OfferFormComponent implements OnInit {
       offer.declaredCost = this.offerFG.controls.declaredCost.value;
       offer.endOfferDate = this.offerFG.controls.endOffer.value;
 
-      if (this.offer.edited == true) {
+      if (this.offer.edited == true && this.offer.editing == false) {
         offer.id = this.offer.id;
         offer.addedById = this.offer.addedById;
         offer.status = 1;
@@ -77,7 +77,21 @@ export class OfferFormComponent implements OnInit {
             this._router.navigate([''])
           }
           else {
-            alert("Eror")
+            alert("Error")
+          }
+        })
+      }
+      if (this.offer.editing == true) {
+        offer.id = this.offer.id;
+        offer.addedById = this.offer.addedById;
+        offer.status = 1;
+        this._job.updateOffer(offer).subscribe(res => {
+          if (res == 1) {
+            alert("Sukces")
+            this.jobOffer.emit(offer);
+          }
+          else {
+            alert("Error")
           }
         })
       }
@@ -105,7 +119,7 @@ export class OfferFormComponent implements OnInit {
   handleChanges() {
     this.offerFG.statusChanges.subscribe(status => {
       this.offerFGOutput.emit(this.offerFG);
-      this.jobOffer.emit(this.offer);
+      //this.jobOffer.emit(this.offer);
       console.log(this.offerFG)
       console.log(this.offer)
     })

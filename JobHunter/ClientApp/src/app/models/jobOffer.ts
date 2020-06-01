@@ -14,7 +14,7 @@ public  addedBy:Users;
 public endOfferDate :Date;
   public categoryId: number;
   public category: Category;
-
+  public editing: boolean;
 public bidOffers:BidOffer[];
   public endedAs: number;
   public edited: boolean;

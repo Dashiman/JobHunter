@@ -33,7 +33,9 @@
           </div>
           <div class="col-md-3">
             <button class="btn-primary btn-primary btn-sm" *ngIf="canBid&&userId!=o.addedById" (click)="bid(o.id)">{{'offer.details'|translate}} </button><br />
-            <button class="btn-primary btn-primary btn-sm" *ngIf="canBid&&userId==o.addedById" (click)="showDetails(o.id)">{{'offer.lookup'|translate}} </button>
+            <button  class="btn-primary btn-primary btn-sm" *ngIf="canBid&&userId==o.addedById"  (click)="editCourse(o)">Edycja</button><br />
+
+            <button style="margin-top:10px;" class="btn-primary btn-primary btn-sm" *ngIf="canBid&&userId==o.addedById" (click)="showDetails(o.id)">{{'offer.lookup'|translate}} </button>
 
           </div>
         </div>
@@ -41,6 +43,11 @@
           <input class="form-control" type="number" step="0.01" id="bid" #bid [(ngModel)]="cost" /><br />
           <button class="btn-primary btn-primary btn-sm" (click)="applyFor(o.id)">{{'offer.offer'|translate}} </button><br />
 
+        </div>
+        <div class="row" *ngIf="o.editing">
+          <div class="col-md-12">
+            <app-offer-form [offer]="o" (offerFGOutput)="seteditFG($event)" (jobOffer)="setOffer($event)"></app-offer-form>
+          </div>
         </div>
       </div>
     </li>

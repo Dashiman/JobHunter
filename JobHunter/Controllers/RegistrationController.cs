@@ -6,6 +6,9 @@ using Services;
 using Microsoft.AspNetCore.Mvc;
 using Model;
 using Microsoft.AspNetCore.Cors;
+using System.IO;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
 
 namespace Controllers
 {
@@ -14,10 +17,14 @@ namespace Controllers
     [ApiController]
     public class RegistrationController : ControllerBase
     {
+        private readonly JobHunterContext _db;
+
         protected readonly IRegistrationService _registrationService;
-        public RegistrationController(IRegistrationService registrationService)
+        public RegistrationController(IRegistrationService registrationService, JobHunterContext db)
         {
             _registrationService = registrationService;
+            _db = db;
+
         }
         [HttpPost("[action]")]
         [Route("CreateAccount")]
@@ -25,6 +32,23 @@ namespace Controllers
         {
 
             var result = await _registrationService.RegisterUserAsync(user);
+            return Ok(1);
+        }
+        //TODO
+        [HttpPost("[action]"), DisableRequestSizeLimit]
+        [Route("Avatar")]
+        public async Task<IActionResult> AddAvatar()
+        {
+            var file = Request.Form.Files[0];
+
+
+            using (var memoryStream = new MemoryStream())
+            {
+                using var image = Image.Load(file.OpenReadStream());
+                image.Mutate(x => x.Resize(256, 256));
+                //image.Save("...");
+            }
+
             return Ok(1);
         }
     }
