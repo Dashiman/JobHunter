@@ -7,6 +7,7 @@ namespace Services.VM
 {
     public class ProfileData
     {
+        public Users User { get; set; }
         public List<JobOffer> TakenbyUser { get; set; }
         public List<JobOffer> AddandTaken { get; set; }
         public List<JobOffer> AddedByUser { get; set; }

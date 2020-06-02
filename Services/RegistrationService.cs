@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Model;
 
 namespace Services
@@ -10,15 +13,19 @@ namespace Services
     public interface IRegistrationService
     {
         Task<bool> RegisterUserAsync(Users user);
+        Task<Users> Update(Users user);
 
     }
 
     public class RegistrationService : IRegistrationService
     {
         private readonly JobHunterContext _db;
+        private readonly ILogger _logger;
 
-        public RegistrationService(JobHunterContext db)
+        public RegistrationService(JobHunterContext db, ILogger<JobService> logger)
         {
+            _logger = logger;
+
             _db = db;
         }
         public async Task<bool> RegisterUserAsync(Users user)
@@ -50,11 +57,40 @@ namespace Services
                 await _db.SaveChangesAsync();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
 
+        }
+        public async Task<Users> Update(Users user)
+        {
+            var res = new Users();
+            try
+            {
+
+                var Editeduser = _db.Users.Where(x => x.Id == user.Id).FirstOrDefault();
+                if (Editeduser != null)
+                {
+                    _db.Entry(Editeduser).CurrentValues.SetValues(user);
+                    _db.Users.Update(Editeduser);
+                    await _db.SaveChangesAsync();
+                    return Editeduser;
+                }
+                else
+                {
+                    res = user;
+                    return res;
+
+                }
+            }
+
+            catch(Exception ex)
+            {
+                _logger.LogError(ex.Message);
+
+            }
+            return res;
         }
     }
 }

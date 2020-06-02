@@ -32,9 +32,13 @@ export class ProfileComponent implements OnInit {
 
     });
     this.job.getPD(id).subscribe(res => {
+      res.editingProfile = false;
       this.profileData = res;
       this.loading = false;
     })
+  }
+  edit() {
+    this.profileData.editingProfile = !this.profileData.editingProfile;
   }
   showDetails(offerId: number) {
     this.route.navigate(['offer/' + offerId])

@@ -138,7 +138,7 @@ namespace Services
                     a.Category = await _db.Category.Where(x => x.Id == a.CategoryId).FirstOrDefaultAsync();
 
                 }
-
+                res.User = _db.Users.Where(x => x.Id == usId).FirstOrDefault();
                 return res;
             }
             catch (Exception ex)

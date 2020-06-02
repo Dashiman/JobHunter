@@ -1,6 +1,10 @@
 <div *ngIf="!loading">
   <app-nav-menu></app-nav-menu>
-
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <button class="btn btn-primary" style="margin-bottom:20px;" (click)="refresh()"> Odśwież</button>
+    </div>
+  </div>
 
   <ul class="list-group">
     <li class="list-group-item" *ngFor="let o of offer| paginate: { itemsPerPage: 10, currentPage: p }">

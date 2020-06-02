@@ -34,6 +34,14 @@ namespace Controllers
             var result = await _registrationService.RegisterUserAsync(user);
             return Ok(1);
         }
+        [HttpPut("[action]")]
+        [Route("UpdateUser")]
+        public async Task<IActionResult> UpdateProfile([FromBody] Users user)
+        {
+
+            var result = await _registrationService.RegisterUserAsync(user);
+            return Ok(result);
+        }
         //TODO
         [HttpPost("[action]"), DisableRequestSizeLimit]
         [Route("Avatar")]

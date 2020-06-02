@@ -5,6 +5,19 @@
     <div class="col-md-10">
       <div class="card">
         <div class="card-header">{{'offer.yt'|translate}}</div>
+        <div *ngIf="!loading&&!profileData.editingProfile" class="card-body">
+          Tutaj dane profilowe
+          (trzeba dodać do jsona jakieś guziory i ewentualnie dociągnąć potrzebne translacje)
+
+        </div>
+        <div *ngIf="!loading&&profileData.editingProfile" class="card-body">
+          Tutaj formularz edycyjny
+
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">{{'offer.yt'|translate}}</div>
         <div *ngIf="!loading" class="card-body">
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let o of profileData.addedByUser">

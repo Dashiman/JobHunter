@@ -69,6 +69,19 @@ export class OfferlistComponent implements OnInit {
   }
   showDetails(offerId: number) {
     this.route.navigate(['offer/' + offerId])
+  
+  }
+  refresh() {
+    this.job.get().subscribe(res => {
+      this.offer = res;
+      this.offer.forEach(x => {
+        x.bidding = false;
+        x.editing = false;
+      })
+      this.loading = false;
+    })
+
+
   }
   editCourse(courseOffer: JobOffer) {
 

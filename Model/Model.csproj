@@ -13,6 +13,8 @@
     <Compile Remove="Migrations\20200517104644_recomendations.Designer.cs" />
     <Compile Remove="Migrations\20200517174442_noweTabele.cs" />
     <Compile Remove="Migrations\20200517174442_noweTabele.Designer.cs" />
+    <Compile Remove="Migrations\20200602185959_DS_Avatar.cs" />
+    <Compile Remove="Migrations\20200602185959_DS_Avatar.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

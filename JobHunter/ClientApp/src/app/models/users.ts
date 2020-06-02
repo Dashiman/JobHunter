@@ -9,7 +9,7 @@ export class Users {
   email: string;
   password: string;
   authority: number;
-
+  endedWellCount: number;
 }
 export class Recomendation {
   id: number;
