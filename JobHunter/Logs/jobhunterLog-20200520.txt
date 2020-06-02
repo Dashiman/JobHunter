@@ -1,0 +1,182 @@
+2020-05-20T22:35:00.8729827+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-05-20T22:35:00.8855330+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-05-20T22:35:00.8856968+02:00  [INF] Content root path: "D:\studia\zaliczenia\JobHunter\JobHunter" (b5d60022)
+2020-05-20T22:35:08.7401885+02:00  [ERR] An unhandled exception occurred: Cannot find module '@angular/compiler-cli'
+ (5cc3a23c)
+2020-05-20T22:35:08.7418859+02:00  [ERR] Require stack:
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\angular_compiler_plugin.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\typescript.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\browser\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\dev-server\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\node-modules-architect-host.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\models\architect-command.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\commands\serve-impl.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\export-ref.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\utilities\json-schema.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\models\command-runner.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\lib\cli\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\lib\init.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+See "C:\Users\JSARNO~1\AppData\Local\Temp\ng-fYwHXa\angular-errors.log" for further details.
+ (a6c76f0a)
+2020-05-20T22:35:08.7741858+02:00  [ERR] npm ERR! code ELIFECYCLE
+ (76992f4c)
+2020-05-20T22:35:08.7758729+02:00  [ERR] npm ERR! syscall spawn
+npm ERR! file C:\Windows\system32\cmd.exe
+npm ERR! errno ENOENT
+npm ERR! jobhunter@0.0.0 start: `ng serve "--port" "3247"`
+ (82deadde)
+2020-05-20T22:35:08.7832069+02:00  [ERR] npm ERR! spawn ENOENT
+npm ERR! 
+npm ERR! Failed at the jobhunter@0.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+ (1044f54a)
+2020-05-20T22:35:08.7836778+02:00  [ERR] npm ERR! A complete log of this run can be found in:
+ (e9dc2fc2)
+2020-05-20T22:35:09.0464359+02:00 80000002-0004-fe00-b63f-84710c7967bb [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: An unhandled exception occurred: Cannot find module '@angular/compiler-cli'
+
+Require stack:
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\angular_compiler_plugin.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\typescript.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\browser\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\dev-server\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\node-modules-architect-host.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\models\architect-command.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\commands\serve-impl.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\export-ref.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\utilities\json-schema.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\models\command-runner.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\lib\cli\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\lib\init.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+See "C:\Users\JSARNO~1\AppData\Local\Temp\ng-fYwHXa\angular-errors.log" for further details.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! syscall spawn
+npm ERR! file C:\Windows\system32\cmd.exe
+npm ERR! errno ENOENT
+npm ERR! jobhunter@0.0.0 start: `ng serve "--port" "3247"`
+
+npm ERR! spawn ENOENT
+npm ERR! 
+npm ERR! Failed at the jobhunter@0.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+
+npm ERR! A complete log of this run can be found in:
+
+))
+ ---> System.AggregateException: One or more errors occurred. (The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: An unhandled exception occurred: Cannot find module '@angular/compiler-cli'
+
+Require stack:
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\angular_compiler_plugin.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\typescript.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\browser\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\dev-server\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\node-modules-architect-host.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\models\architect-command.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\commands\serve-impl.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\export-ref.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\utilities\json-schema.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\models\command-runner.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\lib\cli\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\lib\init.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+See "C:\Users\JSARNO~1\AppData\Local\Temp\ng-fYwHXa\angular-errors.log" for further details.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! syscall spawn
+npm ERR! file C:\Windows\system32\cmd.exe
+npm ERR! errno ENOENT
+npm ERR! jobhunter@0.0.0 start: `ng serve "--port" "3247"`
+
+npm ERR! spawn ENOENT
+npm ERR! 
+npm ERR! Failed at the jobhunter@0.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+
+npm ERR! A complete log of this run can be found in:
+
+)
+ ---> System.InvalidOperationException: The NPM script 'start' exited without indicating that the Angular CLI was listening for requests. The error output was: An unhandled exception occurred: Cannot find module '@angular/compiler-cli'
+
+Require stack:
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\angular_compiler_plugin.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\node_modules\@ngtools\webpack\src\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\typescript.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\webpack-configs\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\browser\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular-devkit\build-angular\src\dev-server\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\node-modules-architect-host.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\architect\node\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\models\architect-command.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\commands\serve-impl.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\export-ref.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\@angular-devkit\schematics\tools\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\utilities\json-schema.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\models\command-runner.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\lib\cli\index.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\lib\init.js
+- C:\Users\jsarnowski\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+See "C:\Users\JSARNO~1\AppData\Local\Temp\ng-fYwHXa\angular-errors.log" for further details.
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! syscall spawn
+npm ERR! file C:\Windows\system32\cmd.exe
+npm ERR! errno ENOENT
+npm ERR! jobhunter@0.0.0 start: `ng serve "--port" "3247"`
+
+npm ERR! spawn ENOENT
+npm ERR! 
+npm ERR! Failed at the jobhunter@0.0.0 start script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+
+npm ERR! A complete log of this run can be found in:
+
+
+ ---> System.IO.EndOfStreamException: Attempted to read past the end of the stream.
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.StartAngularCliServerAsync(String sourcePath, String npmScriptName, ILogger logger)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.StartAngularCliServerAsync(String sourcePath, String npmScriptName, ILogger logger)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.AngularCli.AngularCliMiddleware.<>c.<Attach>b__2_0(Task`1 task)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at Microsoft.AspNetCore.SpaServices.Extensions.Util.TaskTimeoutExtensions.WithTimeout[T](Task`1 task, TimeSpan timeoutDelay, String message)
+   at Microsoft.AspNetCore.SpaServices.Extensions.Proxy.SpaProxy.PerformProxyRequest(HttpContext context, HttpClient httpClient, Task`1 baseUriTask, CancellationToken applicationStoppingToken, Boolean proxy404s)
+   at Microsoft.AspNetCore.Builder.SpaProxyingExtensions.<>c__DisplayClass2_0.<<UseProxyToSpaDevelopmentServer>b__0>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
