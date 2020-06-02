@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{6656A250-ED51-4941-986C-54DFA1412867}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHunterTests", "JobHunterTests\JobHunterTests.csproj", "{70357B3E-FD63-4A59-A7F9-D2B8BC5B72D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobHunterTests", "JobHunterTests\JobHunterTests.csproj", "{0769720A-2373-4A3C-A647-EE2ED32CC067}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{6656A250-ED51-4941-986C-54DFA1412867}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6656A250-ED51-4941-986C-54DFA1412867}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6656A250-ED51-4941-986C-54DFA1412867}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70357B3E-FD63-4A59-A7F9-D2B8BC5B72D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70357B3E-FD63-4A59-A7F9-D2B8BC5B72D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70357B3E-FD63-4A59-A7F9-D2B8BC5B72D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70357B3E-FD63-4A59-A7F9-D2B8BC5B72D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0769720A-2373-4A3C-A647-EE2ED32CC067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0769720A-2373-4A3C-A647-EE2ED32CC067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0769720A-2373-4A3C-A647-EE2ED32CC067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0769720A-2373-4A3C-A647-EE2ED32CC067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
