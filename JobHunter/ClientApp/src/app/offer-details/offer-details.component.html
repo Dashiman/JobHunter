@@ -1,39 +1,41 @@
 <app-nav-menu></app-nav-menu>
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-10">
-      <div class="card">
-        <div class="card-header">{{offer.title}}</div>
-        <div *ngIf="!loading" class="card-body">
-          <app-offer-form [offer]="offer" (offerFGOutput)="seteditFG($event)" (jobOffer)="setOffer($event)"></app-offer-form>
+<app-atom-spinner *ngIf="loading" [animationDuration]="1000"
+                  [size]="60"
+                  [color]="'#156383'"></app-atom-spinner>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card">
+          <div class="card-header">{{offer.title}}</div>
+          <div *ngIf="!loading" class="card-body">
+            <app-offer-form [offer]="offer" (offerFGOutput)="seteditFG($event)" (jobOffer)="setOffer($event)"></app-offer-form>
+          </div>
         </div>
       </div>
+
     </div>
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card">
+          <div class="card-header">{{'offer.bids'|translate}}</div>
+          <div *ngIf="!loading" class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let o of offer.bidOffers">
+                <div class="row">
+                  <div class="col-md-3">
+                    {{o.user?.username}}<br />
+                    {{'offer.endWell'|translate}}:  {{o.user?.endedWellCount}}<br />
+                    {{'offer.endBad'|translate}}:  {{o.user?.endedBadCount}}
 
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-md-10">
-      <div class="card">
-        <div class="card-header">{{'offer.bids'|translate}}</div>
-        <div *ngIf="!loading" class="card-body">
-          <ul class="list-group">
-            <li class="list-group-item" *ngFor="let o of offer.bidOffers">
-              <div class="row">
-                <div class="col-md-3">
-                  {{o.user?.username}}<br />
-                  {{'offer.endWell'|translate}}:  {{o.user?.endedWellCount}}<br />
-                  {{'offer.endBad'|translate}}:  {{o.user?.endedBadCount}}
-
+                  </div>
+                  <div class="col-md-3">{{o.proposition}}</div>
+                  <div class="col-md-3">{{o.offerDate | date : "dd.MM.yyyy" }}</div>
+                  <div class="col-md-3"><button class="btn-primary btn-sm btn-primary" (click)="giveJob(o)">{{'offer.give'|translate}}</button></div>
                 </div>
-                <div class="col-md-3">{{o.proposition}}</div>
-                <div class="col-md-3">{{o.offerDate | date : "dd.MM.yyyy" }}</div>
-                <div class="col-md-3"><button class="btn-primary btn-sm btn-primary" (click)="giveJob(o)">{{'offer.give'|translate}}</button></div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>

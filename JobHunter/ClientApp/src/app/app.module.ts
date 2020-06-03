@@ -20,6 +20,7 @@ import { EditOfferComponent } from './edit-offer/edit-offer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ManyOffersComponent } from './many-offers/many-offers.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AtomSpinnerModule } from 'angular-epic-spinners'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ],
   imports: [NgxPaginationModule,
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    AtomSpinnerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -72,6 +72,7 @@ export class OfferlistComponent implements OnInit {
   
   }
   refresh() {
+    this.loading = true;
     this.job.get().subscribe(res => {
       this.offer = res;
       this.offer.forEach(x => {
