@@ -39,7 +39,7 @@ namespace Controllers
         public async Task<IActionResult> UpdateProfile([FromBody] Users user)
         {
 
-            var result = await _registrationService.RegisterUserAsync(user);
+            var result = await _registrationService.Update(user);
             return Ok(result);
         }
         //TODO
