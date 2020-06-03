@@ -20,7 +20,12 @@
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let o of offer.bidOffers">
               <div class="row">
-                <div class="col-md-3">{{o.user?.username}}</div>
+                <div class="col-md-3">
+                  {{o.user?.username}}<br />
+                  {{'offer.endWell'|translate}}:  {{o.user?.endedWellCount}}<br />
+                  {{'offer.endBad'|translate}}:  {{o.user?.endedBadCount}}
+
+                </div>
                 <div class="col-md-3">{{o.proposition}}</div>
                 <div class="col-md-3">{{o.offerDate | date : "dd.MM.yyyy" }}</div>
                 <div class="col-md-3"><button class="btn-primary btn-sm btn-primary" (click)="giveJob(o)">{{'offer.give'|translate}}</button></div>

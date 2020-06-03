@@ -12,15 +12,15 @@ namespace Services
 {
     public interface IJobService
     {
-        Task<int> Add(JobOffer job);
-        Task<int> AddBid(BidOffer offer);
-        Task<List<JobOffer>> GetAll();
-        Task<int> UpdateOffer(JobOffer edited);
+        Task<int> Add(Model.JobOffer job);
+        Task<int> AddBid(Model.BidOffer offer);
+        Task<List<Model.JobOffer>> GetAll();
+        Task<int> UpdateOffer(Model.JobOffer edited);
         Task<int> EndCourse(EndModel end);
-        Task<JobOffer> GetOffer(int offId);
+        Task<VM.JobOffer> GetOffer(int offId);
         Task<ProfileData> GetProfileData(int usId);
         Task<int> DeleteOffer(int offId);
-        Task<int> TakeJob(BidOffer offer);
+        Task<int> TakeJob(Model.BidOffer offer);
     }
 
     public class JobService:IJobService
@@ -33,7 +33,7 @@ namespace Services
             _logger = logger;
         }
 
-        public async Task<int> Add(JobOffer job)
+        public async Task<int> Add(Model.JobOffer job)
         {
             int res = 0;
             try
@@ -52,7 +52,7 @@ namespace Services
 
             return res;
         }
-        public async Task<int> AddBid(BidOffer offer)
+        public async Task<int> AddBid(Model.BidOffer offer)
         {
             int res = 0;
             try
@@ -68,7 +68,7 @@ namespace Services
 
             return res;
         }   
-        public async Task<int> TakeJob(BidOffer offer)
+        public async Task<int> TakeJob(Model.BidOffer offer)
         {
             int res = 0;
             try
@@ -76,7 +76,7 @@ namespace Services
 
                 var off = await _db.JobOffer.Where(x => x.Id == offer.JobOfferId).FirstOrDefaultAsync();
                 if (off!=null){
-                    var edited = new JobOffer();
+                    var edited = new Model.JobOffer();
                     edited = off;
                     edited.TakenById = offer.UserId;
                     edited.Status = 2;
@@ -94,9 +94,9 @@ namespace Services
 
             return res;
         }
-        public async Task<List<JobOffer>> GetAll()
+        public async Task<List<Model.JobOffer>> GetAll()
         {
-            List<JobOffer> res = new List<JobOffer>();
+            List<Model.JobOffer> res = new List<Model.JobOffer>();
             try
             {
                 res = await _db.JobOffer.Where(x=>x.Status==1).ToListAsync();
@@ -148,27 +148,52 @@ namespace Services
 
             return res;
         }
-        public async Task<JobOffer> GetOffer(int offId)
+        public async Task<VM.JobOffer> GetOffer(int offId)
         {
-            JobOffer res = new JobOffer();
+            VM.JobOffer res = new VM.JobOffer();
             try
             {
-                res = await _db.JobOffer.Where(x => x.Id == offId).FirstOrDefaultAsync();
+                res = await _db.JobOffer.Where(x => x.Id == offId).Select(i=>new VM.JobOffer { 
+                Id=i.Id,
+                AddedById=i.AddedById,
+                CategoryId=i.CategoryId,
+                DeclaredCost=i.DeclaredCost,
+                Description=i.Description,
+                EndedAs=i.EndedAs,
+                EndOfferDate=i.EndOfferDate,
+                Status=i.Status,
+                TakenById=i.TakenById,
+                Title=i.Title,
+                AddedBy= _db.Users.Where(x => x.Id == res.AddedById).Select(m=>new VM.Users { 
                 
-                    res.AddedBy = await _db.Users.Where(x => x.Id == res.AddedById).FirstOrDefaultAsync();
-                    res.Category = await _db.Category.Where(x => x.Id == res.CategoryId).FirstOrDefaultAsync();
-                res.BidOffers = await _db.BidOffer.Where(x => x.JobOfferId == res.Id).OrderBy(x=>x.Proposition).ToListAsync();
-                foreach(var t in res.BidOffers)
+                }).FirstOrDefault(),
+                Category= _db.Category.Where(x => x.Id == res.CategoryId).FirstOrDefault(),
+      
+                }).FirstOrDefaultAsync();
+
+
+                res.BidOffers = _db.BidOffer.Where(x => x.JobOfferId == res.Id).Select(g => new VM.BidOffer
                 {
-                    t.User = _db.Users.Where(x => x.Id == t.UserId).Select(x => new Users
+                    Id = g.Id,
+                    JobOfferId = g.JobOfferId,
+                    OfferDate = g.OfferDate,
+                    Proposition = g.Proposition,
+                    UserId = g.UserId
+
+                }).OrderBy(x => x.Proposition).ToList();
+                foreach (var t in res.BidOffers)
+                {
+                    t.User = _db.Users.Where(x => x.Id == t.UserId).Select(x => new VM.Users
                     {
                         Id = x.Id,
-                        Username = x.Username
+                        Username = x.Username,
+                        EndedBadCount = _db.JobOffer.Where(p => p.TakenById == x.Id && p.Status == 5).Count(),
+                        EndedWellCount = _db.JobOffer.Where(p => p.TakenById == x.Id && p.Status == 3).Count()
 
                     }).FirstOrDefault();
 
                 }
-                    return res;
+                return res;
                 
             }
             catch (Exception ex)
@@ -197,7 +222,7 @@ namespace Services
 
             return res;
         }
-        public async Task<int> UpdateOffer(JobOffer edited)
+        public async Task<int> UpdateOffer(Model.JobOffer edited)
         {
             int res = 0;
             try
@@ -229,7 +254,7 @@ namespace Services
                 var off = await _db.JobOffer.Where(x => x.Id == end.OfferId).FirstOrDefaultAsync();
                 if (off != null)
                 {
-                    var offer = new JobOffer();
+                    var offer = new Model.JobOffer();
                     offer = off;
                     offer.Status = end.StatusId;
                     _db.Entry(off).CurrentValues.SetValues(offer);

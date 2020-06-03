@@ -46,7 +46,9 @@
     "recommend": "Zakończone z rekomendacją",
     "ended": "Zakończone",
     "reclamation": "Zakończone z reklamacją",
-    "upload": "Dodaj wiele kursów"
+    "upload": "Dodaj wiele kursów",
+    "endWell": "Kursy zakończone pozytywnie",
+    "endBad": "Kursy zakończone negatywnie"
   },
   "errors": {
     "req": "Pole jest wymagane",

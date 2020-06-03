@@ -31,7 +31,7 @@ namespace JobHunter.Controllers
 
         [HttpPut("[action]")]
         [Route("EditOffer")]
-        public async Task<IActionResult> EditOffer([FromBody]JobOffer offer)
+        public async Task<IActionResult> EditOffer([FromBody] Model.JobOffer offer)
         {
             
             var result = await _job.UpdateOffer(offer);
@@ -47,7 +47,7 @@ namespace JobHunter.Controllers
         }  
         [HttpPost("[action]")]
         [Route("AddOffer")]
-        public async Task<IActionResult> AddNewOffer([FromBody]JobOffer offer)
+        public async Task<IActionResult> AddNewOffer([FromBody]Model.JobOffer offer)
         {
             offer.AddedById = (int)HttpContext.Session.GetInt32("userid");
             offer.Status = 1;
@@ -56,7 +56,7 @@ namespace JobHunter.Controllers
         }   
         [HttpPost("[action]")]
         [Route("GiveJob")]
-        public async Task<IActionResult> TakeJob([FromBody]BidOffer offer)
+        public async Task<IActionResult> TakeJob([FromBody] Model.BidOffer offer)
         {
 
             var result = await _job.TakeJob(offer);
@@ -64,7 +64,7 @@ namespace JobHunter.Controllers
         }
         [HttpPost("[action]")]
         [Route("ApplyFor")]
-        public async Task<IActionResult> AddBid([FromBody]BidOffer offer)
+        public async Task<IActionResult> AddBid([FromBody] Model.BidOffer offer)
         {
             offer.UserId = HttpContext.Session.GetInt32("userid");
             var result = await _job.AddBid(offer);
@@ -86,7 +86,7 @@ namespace JobHunter.Controllers
                 csv.Configuration.IncludePrivateMembers = true;
                 var UserId = HttpContext.Session.GetInt32("userid");
 
-                var records = csv.GetRecords<JobOffer>();
+                var records = csv.GetRecords<Model.JobOffer>();
                 foreach(var t in records)
                 {
                     t.AddedById =(int) UserId;
@@ -130,7 +130,7 @@ namespace JobHunter.Controllers
         }
 
     }
-    public class JobMap : ClassMap<JobOffer>
+    public class JobMap : ClassMap<Model.JobOffer>
     {
         public JobMap()
         {

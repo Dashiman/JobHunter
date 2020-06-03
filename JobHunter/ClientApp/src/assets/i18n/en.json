@@ -46,7 +46,9 @@
     "endAs": "End course",
     "recommend": "Ended with recommendation",
     "ended": "Ended",
-    "reclamation": "Ended with complaint"
+    "reclamation": "Ended with complaint",
+    "endWell": "Courses ended with recommendation",
+    "endBad": "Courses ended badly"
   },
   "errors": {
     "req": "Field is required",

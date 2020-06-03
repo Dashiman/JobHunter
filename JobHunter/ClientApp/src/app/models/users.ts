@@ -10,6 +10,7 @@ export class Users {
   password: string;
   authority: number;
   endedWellCount: number;
+  endedBadCount: number;
 }
 export class Recomendation {
   id: number;
