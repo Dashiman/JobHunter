@@ -49,6 +49,7 @@ namespace JobHunter.Controllers
         [Route("AddOffer")]
         public async Task<IActionResult> AddNewOffer([FromBody]Model.JobOffer offer)
         {
+            if(offer.AddedById==0)
             offer.AddedById = (int)HttpContext.Session.GetInt32("userid");
             offer.Status = 1;
             var result = await _job.Add(offer);
@@ -66,7 +67,8 @@ namespace JobHunter.Controllers
         [Route("ApplyFor")]
         public async Task<IActionResult> AddBid([FromBody] Model.BidOffer offer)
         {
-            offer.UserId = HttpContext.Session.GetInt32("userid");
+            if (offer.UserId == 0)
+                offer.UserId = (int)HttpContext.Session.GetInt32("userid");
             var result = await _job.AddBid(offer);
             return Ok(result);
         }
