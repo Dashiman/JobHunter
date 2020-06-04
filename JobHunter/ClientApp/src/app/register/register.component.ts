@@ -3,6 +3,8 @@ import { Users } from "../models/users";
 import { RegistrationService } from "../services/registration.service";
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   user: Users;
   regisFG: FormGroup;
-  constructor(private registrationService: RegistrationService, private fb: FormBuilder, private _router: Router) {
+  constructor(private toastr: ToastrService, private registrationService: RegistrationService, private fb: FormBuilder, private _router: Router) {
     this.user = new Users();
 
   }
@@ -52,12 +54,12 @@ export class RegisterComponent implements OnInit {
       this.registrationService.register(this.user).subscribe(
         (res) => {
           if (res == 1) {
-            alert("Użytkownik dodany");
+            this.toastr.success("Użytkownik dodany");
             this._router.navigate(["/signIn"]);
 
           }
           else
-            alert("Błąd podczas dodawania użytkownika");
+            this.toastr.error("Błąd podczas dodawania użytkownika");
         }
       );
     }

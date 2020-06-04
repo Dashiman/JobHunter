@@ -7,6 +7,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Users } from '../models/users';
 import { RegistrationService } from '../services/registration.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -22,7 +24,7 @@ export class ProfileComponent implements OnInit {
   editFg: FormGroup;
   userId: number;
   endOption: number;
-  constructor(private registrationService: RegistrationService, private job: JobOfferService, private auth: AuthService, private ar: ActivatedRoute, private route: Router, private fb: FormBuilder) {
+  constructor(private toastr: ToastrService, private registrationService: RegistrationService, private job: JobOfferService, private auth: AuthService, private ar: ActivatedRoute, private route: Router, private fb: FormBuilder) {
     this.loading = true;
     this.profileData = new ProfileData();
     this.user = new Users();
@@ -89,11 +91,11 @@ export class ProfileComponent implements OnInit {
 
       this.job.endCourse(end).subscribe(res => {
         if (res == 1) {
-          alert("Pomyślnie zakończono kurs");
+          this.toastr.success("Pomyślnie zakończono kurs");
           this.route.navigate([''])
         }
         else
-          alert("Błąd podczas zamykania kursu")
+          this.toastr.error("Błąd podczas zamykania kursu")
       })
     }
   }
@@ -102,21 +104,22 @@ export class ProfileComponent implements OnInit {
     this.editFg.markAllAsTouched();
     console.log(this.editFg)
     if (this.editFg.valid) {
-      this.user.username = profileEditForm.controls.username.value;
-      this.user.firstname = profileEditForm.controls.name.value;
-      this.user.lastname = profileEditForm.controls.lastname.value;
-      this.user.phone = parseInt(profileEditForm.controls.phoneNumber.value);
-      this.user.email = profileEditForm.controls.email.value;
+      this.user.id = this.profileData.user.id;
+      this.user.username = this.editFg.controls.username.value;
+      this.user.firstname = this.editFg.controls.name.value;
+      this.user.lastname = this.editFg.controls.lastname.value;
+      this.user.phone = parseInt(this.editFg.controls.phoneNumber.value);
+      this.user.email = this.editFg.controls.email.value;
       this.user.authority = 1;
     }
 
     this.registrationService.update(this.user).subscribe(
       (res) => {
         if (res) {
-          alert("Pomyślnie zaktualizowano");
+          this.toastr.success("Pomyślnie zaktualizowano");
         }
         else
-          alert("Błąd podczas aktualizacji danych użytkownika");
+          this.toastr.error("Błąd podczas aktualizacji danych użytkownika");
       }
     );
   }
