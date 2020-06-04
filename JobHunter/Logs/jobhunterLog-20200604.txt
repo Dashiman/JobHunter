@@ -215,3 +215,109 @@ Error Number:544,State:1,Class:16
    at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
    at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
    at Services.RegistrationService.RegisterUserAsync(Users user) in D:\studia\zaliczenia\JobHunter\Services\RegistrationService.cs:line 57
+2020-06-04T08:27:46.2356581+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-06-04T08:27:46.2693894+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-06-04T08:27:46.2695162+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-06-04T08:27:57.1514706+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-06-04T08:28:26.8482791+02:00 80000901-0001-d500-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:28:26.8540388+02:00 80000901-0001-d500-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:28:26.8542055+02:00 80000901-0001-d500-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:30:25.9360014+02:00 8000040a-0003-f000-b63f-84710c7967bb [ERR] Failed executing DbCommand ("63"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Int32), @p9='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [Authority], [Avatar], [AvatarFilename], [Email], [Firstname], [Lastname], [Password], [Phone], [Username])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);" (627a98df)
+2020-06-04T08:30:26.1464752+02:00 8000040a-0003-f000-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"Model.JobHunterContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Users' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:44aff6af-75a3-4c4f-9eb4-2442f0d75407
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'Users' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__164_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:44aff6af-75a3-4c4f-9eb4-2442f0d75407
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2020-06-04T08:37:36.1132408+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-06-04T08:37:36.1256739+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-06-04T08:37:36.1257789+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-06-04T08:37:43.8190361+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-06-04T08:38:10.1079338+02:00 800002d3-0003-f300-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:38:10.1100520+02:00 800002d3-0003-f300-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:38:10.1101210+02:00 800002d3-0003-f300-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:46:15.3829094+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-06-04T08:46:15.3920441+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-06-04T08:46:15.3921520+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-06-04T08:46:22.4290224+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-06-04T08:46:48.5337412+02:00 80000414-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:46:48.5359739+02:00 80000414-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:46:48.5368549+02:00 80000414-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:48:21.3166371+02:00 80000403-0002-d900-b63f-84710c7967bb [ERR] Object reference not set to an instance of an object. (f59a5554)
+2020-06-04T08:50:49.0055314+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-06-04T08:50:49.0163812+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-06-04T08:50:49.0164873+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-06-04T08:50:56.2158626+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-06-04T08:51:19.6727595+02:00 8000041e-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:51:19.6765139+02:00 8000041e-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:51:19.6767368+02:00 8000041e-0000-ab00-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:56:13.6317675+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-06-04T08:56:13.6431918+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-06-04T08:56:13.6433019+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-06-04T08:56:21.1003419+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-06-04T08:56:47.8768619+02:00 800002b1-0003-e100-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:56:47.8789910+02:00 800002b1-0003-e100-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:56:47.8791066+02:00 800002b1-0003-e100-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T08:59:53.3792458+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-06-04T08:59:53.3984333+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-06-04T08:59:53.3985420+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-06-04T09:00:02.6999028+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-06-04T09:00:27.0052288+02:00 8000041d-0003-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T09:00:27.0073895+02:00 8000041d-0003-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T09:00:27.0074746+02:00 8000041d-0003-f000-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T09:02:37.8837465+02:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2020-06-04T09:02:37.9004917+02:00  [INF] Hosting environment: "Development" (c3307c92)
+2020-06-04T09:02:37.9005978+02:00  [INF] Content root path: "C:\Users\Damian\source\repos\JobHunter\JobHunter" (b5d60022)
+2020-06-04T09:02:45.3080117+02:00  [ERR] Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+ (ad9dc99d)
+2020-06-04T09:03:11.0120788+02:00 80000386-0000-a800-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"Proposition"' on entity type '"BidOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T09:03:11.0146954+02:00 80000386-0000-a800-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"JobOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)
+2020-06-04T09:03:11.0147757+02:00 80000386-0000-a800-b63f-84710c7967bb [WRN] No type was specified for the decimal column '"DeclaredCost"' on entity type '"TakenOffer"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'HasColumnType()'. (3a0db05f)

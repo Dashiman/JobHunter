@@ -41,6 +41,7 @@ export class ProfileComponent implements OnInit {
     this.job.getPD(id).subscribe(res => {
       res.editingProfile = false;
       this.profileData = res;
+
       this.loading = false;
       this.user = res.user;
     })

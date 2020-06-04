@@ -78,7 +78,7 @@ namespace Services
                 if (off!=null){
                     var edited = new Model.JobOffer();
                     edited = off;
-                    edited.TakenById = offer.UserId;
+                    edited.TakenById = offer.User.Id;
                     edited.Status = 2;
                     _db.Entry(off).CurrentValues.SetValues(edited);
                     _db.JobOffer.Update(off);
@@ -183,14 +183,14 @@ namespace Services
                 }).OrderBy(x => x.Proposition).ToList();
                 foreach (var t in res.BidOffers)
                 {
-                    t.User = _db.Users.Where(x => x.Id == t.UserId).Select(x => new VM.Users
+                    t.User = _db.Users.Where(x => x.Id == res.AddedById).Select(x => new VM.Users
                     {
                         Id = x.Id,
                         Username = x.Username,
-                        EndedBadCount = _db.JobOffer.Where(p => p.TakenById == x.Id && p.Status == 5).Count(),
-                        EndedWellCount = _db.JobOffer.Where(p => p.TakenById == x.Id && p.Status == 3).Count()
-
+                      
                     }).FirstOrDefault();
+                    t.User.EndedBadCount = _db.JobOffer.Where(p => p.TakenById == res.AddedById && p.Status == 5).Count();
+                    t.User.EndedWellCount = _db.JobOffer.Where(p => p.TakenById == res.AddedById && p.Status == 3).Count();
 
                 }
                 return res;

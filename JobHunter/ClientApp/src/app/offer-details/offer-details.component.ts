@@ -29,7 +29,7 @@ export class OfferDetailsComponent implements OnInit {
         this.job.getOffer(offId).subscribe(res => {
           res.edited = true;
           this.offer = res;
-
+          console.log(this.offer)
           this.loading = false;
         })
       }
