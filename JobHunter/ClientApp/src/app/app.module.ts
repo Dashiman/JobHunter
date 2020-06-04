@@ -21,6 +21,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ManyOffersComponent } from './many-offers/many-offers.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AtomSpinnerModule } from 'angular-epic-spinners'
+
 @NgModule({
   declarations: [
     AppComponent,

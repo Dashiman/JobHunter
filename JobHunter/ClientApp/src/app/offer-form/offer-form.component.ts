@@ -7,8 +7,6 @@ import { JobOfferService } from '../services/job-offer.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Input } from '@angular/core';
 import { error } from 'protractor';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-offer-form',
@@ -32,7 +30,7 @@ export class OfferFormComponent implements OnInit {
   get description() { return this.offerFG.get('description') }
   get endOffer() { return this.offerFG.get('endOffer') }
 
-  constructor(private toastr: ToastrService, private _authService: AuthService, private fb: FormBuilder, private _router: Router, private _job: JobOfferService, private _t: TranslateService) {
+  constructor(private _authService: AuthService, private fb: FormBuilder, private _router: Router, private _job: JobOfferService, private _t: TranslateService) {
  
   }
   ngOnInit() {
@@ -74,12 +72,12 @@ export class OfferFormComponent implements OnInit {
         offer.status = 1;
         this._job.updateOffer(offer).subscribe(res => {
           if (res == 1) {
-            this.toastr.success("Sukces")
+            alert("Sukces")
 
             this._router.navigate([''])
           }
           else {
-            this.toastr.error("Błąd")
+            alert("Błąd")
           }
         })
       }
@@ -89,11 +87,11 @@ export class OfferFormComponent implements OnInit {
         offer.status = 1;
         this._job.updateOffer(offer).subscribe(res => {
           if (res == 1) {
-            this.toastr.success("Sukces")
+            alert("Sukces")
             this.jobOffer.emit(offer);
           }
           else {
-            this.toastr.error("Błąd")
+            alert("Błąd")
           }
         })
       }
@@ -111,11 +109,11 @@ export class OfferFormComponent implements OnInit {
   delete() {
     this._job.deleteOffer(this.offer.id).subscribe(res => {
       if (res == 1) {
-        this.toastr.success("Pomyślnie usunięto")
+        alert("Pomyślnie usunięto")
         this._router.navigate(['']);
       }
       else
-        this.toastr.error ("Błąd usuwania")
+        alert ("Błąd usuwania")
     })
   }
   handleChanges() {

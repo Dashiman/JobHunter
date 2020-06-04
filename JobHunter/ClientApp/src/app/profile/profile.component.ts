@@ -7,8 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Users } from '../models/users';
 import { RegistrationService } from '../services/registration.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -24,7 +22,7 @@ export class ProfileComponent implements OnInit {
   editFg: FormGroup;
   userId: number;
   endOption: number;
-  constructor(private toastr: ToastrService, private registrationService: RegistrationService, private job: JobOfferService, private auth: AuthService, private ar: ActivatedRoute, private route: Router, private fb: FormBuilder) {
+  constructor(private registrationService: RegistrationService, private job: JobOfferService, private auth: AuthService, private ar: ActivatedRoute, private route: Router, private fb: FormBuilder) {
     this.loading = true;
     this.profileData = new ProfileData();
     this.user = new Users();
@@ -91,11 +89,11 @@ export class ProfileComponent implements OnInit {
 
       this.job.endCourse(end).subscribe(res => {
         if (res == 1) {
-          this.toastr.success("Pomyślnie zakończono kurs");
+          alert("Pomyślnie zakończono kurs");
           this.route.navigate([''])
         }
         else
-          this.toastr.error("Błąd podczas zamykania kursu")
+          alert("Błąd podczas zamykania kursu")
       })
     }
   }
@@ -116,10 +114,10 @@ export class ProfileComponent implements OnInit {
     this.registrationService.update(this.user).subscribe(
       (res) => {
         if (res) {
-          this.toastr.success("Pomyślnie zaktualizowano");
+          alert("Pomyślnie zaktualizowano");
         }
         else
-          this.toastr.error("Błąd podczas aktualizacji danych użytkownika");
+          alert("Błąd podczas aktualizacji danych użytkownika");
       }
     );
   }

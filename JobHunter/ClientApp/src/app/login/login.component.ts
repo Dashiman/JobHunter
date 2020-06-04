@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Users } from '../models/users';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
 
   user: Users;
-  constructor(private toastr: ToastrService, private _authService: AuthService, private _router: Router) {
+  constructor(private _authService: AuthService, private _router: Router) {
     this.user = new Users();
 
   }
@@ -41,15 +39,15 @@ export class LoginComponent implements OnInit {
 
 
         case 2:
-          this.toastr.error("Brak użytkownika")
+         alert("Brak użytkownika")
           break;
 
         case 3:
-          this.toastr.error("Błędne dane logowania")
+          alert("Błędne dane logowania")
           break;
 
         default:
-          this.toastr.error("Nieznany kod błędu")
+          alert("Nieznany kod błędu")
           break;
 
         }
