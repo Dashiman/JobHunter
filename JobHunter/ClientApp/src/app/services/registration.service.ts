@@ -26,7 +26,7 @@ export class RegistrationService {
 
   update(user: Users): Observable<Users> {
     console.log(window.location.origin);
-    return this.http.put<Users>(this.baseUrl + "/api/registration/CreateAccount", user).pipe(
+    return this.http.put<Users>(this.baseUrl + "/api/registration/UpdateUser", user).pipe(
       (res) => {
         return res;
       }
