@@ -36,6 +36,7 @@
     "end": "End of course",
     "addedBy": "Added by",
     "details": "Offer",
+    "actions":  "Your actions",
     "offer": "Hand up!",
     "lookup": "Details",
     "bids": "Offers",
@@ -53,5 +54,16 @@
   "errors": {
     "req": "Field is required",
     "jobAddErr": "Error during course addition"
+  },
+  "userEdit": {
+    "title":  "Edit profile",
+    "username": "Login",
+    "password": "Password",
+    "email": "E-mail address",
+    "phone": "Phone number",
+    "name": "Name",
+    "lastname": "Nastname",
+    "save": "Save changes",
+    "cancel": "Cancel"
   }
 }

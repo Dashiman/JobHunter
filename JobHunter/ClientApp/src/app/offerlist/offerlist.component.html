@@ -5,15 +5,15 @@
     <app-nav-menu></app-nav-menu>
     <div class="row">
       <div class="col-md-12 text-center">
-        <button class="btn btn-primary" style="margin-bottom:20px;" (click)="refresh()"> Odśwież</button>
+        <button class="btn btn-primary" (click)="refresh()"> Odśwież</button>
       </div>
     </div>
 
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let o of offer| paginate: { itemsPerPage: 10, currentPage: p }">
+      <li class="list-group-item" *ngFor="let o of offer| paginate: { itemsPerPage: 10, currentPage: p }" style="margin-top: 1%;">
         <div>
           <h5>
-            {{o.title}}
+            <b>{{o.title}}</b>
 
           </h5>
           <div class="row ">
@@ -41,9 +41,7 @@
             <div class="col-md-3">
               <button class="btn-primary btn-primary btn-sm" *ngIf="canBid&&userId!=o.addedById" (click)="bid(o.id)">{{'offer.details'|translate}} </button><br />
               <button class="btn-primary btn-primary btn-sm" *ngIf="canBid&&userId==o.addedById" (click)="editCourse(o)">Edycja</button><br />
-
-              <button style="margin-top:10px;" class="btn-primary btn-primary btn-sm" *ngIf="canBid&&userId==o.addedById" (click)="showDetails(o.id)">{{'offer.lookup'|translate}} </button>
-
+              <button style="margin-top:5px;" class="btn-primary btn-primary btn-sm" *ngIf="canBid&&userId==o.addedById" (click)="showDetails(o.id)">{{'offer.lookup'|translate}}</button>
             </div>
           </div>
           <div class="row" *ngIf="o.bidding">

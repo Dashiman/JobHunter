@@ -18,6 +18,15 @@ export class RegistrationService {
   register(user: Users): Observable<number> {
     console.log(window.location.origin);
     return this.http.post<number>(this.baseUrl + "/api/registration/CreateAccount", user).pipe(
+      (res) => {  
+        return res;
+      }
+    )
+  } 
+
+  update(user: Users): Observable<Users> {
+    console.log(window.location.origin);
+    return this.http.put<Users>(this.baseUrl + "/api/registration/CreateAccount", user).pipe(
       (res) => {
         return res;
       }

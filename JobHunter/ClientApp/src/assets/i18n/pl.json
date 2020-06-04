@@ -12,7 +12,6 @@
   "login": {
     "login": "Zaloguj",
     "logout": "Wyloguj",
-
     "password": "Hasło",
     "register": "Zarejestruj się",
     "username": "Login",
@@ -34,9 +33,10 @@
     "delete": "Usuń",
     "end": "Koniec oferty",
     "addedBy": "Dodane przez",
-    "details":"Zaoferuj",
+    "details": "Zaoferuj",
     "offer": "Zgłoś się!",
     "lookup": "Szczegóły",
+    "actions": "Twoje akcje",
     "bids": "Oferty",
     "give": "Zleć",
     "yt": "Twoje zlecenia",
@@ -53,5 +53,16 @@
   "errors": {
     "req": "Pole jest wymagane",
     "jobAddErr": "Błąd podczas dodawania oferty"
+  },
+  "userEdit": {
+    "title": "Edycja profilu",
+    "username": "Login",
+    "password": "Hasło",
+    "email": "Adres e-mail",
+    "phone": "Numer telefonu",
+    "name": "Imię",
+    "lastname": "Nazwisko",
+    "save": "Zapisz zmiany",
+    "cancel": "Anuluj"
   }
 }

@@ -14,3 +14,15 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+
+body {
+    background-image: url("/assets/img/bg.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+div, nav {
+    border-radius: 5px;
+}
