@@ -20,7 +20,7 @@
           <div class="card-header">{{'offer.bids'|translate}}</div>
           <div *ngIf="!loading" class="card-body">
             <ul class="list-group">
-              <li class="list-group-item" *ngFor="let o of offer.bidOffers">
+              <li class="list-group-item" *ngFor="let o of offer.bidOffers" style="margin-top:1%;">
                 <div class="row">
                   <div class="col-md-3">
                     {{o.user?.username}}<br />
