@@ -6,7 +6,7 @@ Aplikacja, której zadaniem jest pozwolenie użytkownikom na dodawanie i zamawia
 ## Uruchumienie
 
 1. Otwórz folder ClientApp i uruchom:
-### `npm install`
+ `npm install`
 2. Następnie otwórz plik CourseHunter.sln w programie Visual Studio.
 3. Utwórz bazę SQLServer
 4. Skonfiguruj plik appsettings.json poprzed dodanie ConnectionStringa do swojej bazy
