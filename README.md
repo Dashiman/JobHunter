@@ -3,17 +3,17 @@
 
 Aplikacja, której zadaniem jest pozwolenie użytkownikom na dodawanie i zamawianie kursów tworzonych przez użytkowników.
 
-## Uruchumienie
+## Setup
 
-1. Otwórz folder ClientApp i uruchom:
+1. Open ClientApp and run command:
  `npm install`
-2. Następnie otwórz plik CourseHunter.sln w programie Visual Studio.
-3. Utwórz bazę SQLServer
-4. Skonfiguruj plik appsettings.json poprzed dodanie ConnectionStringa do swojej bazy
-5. W konsoli menedżera pakietów wybierz projekt Model jako startowy i użyj komendy `update-database`
-6. Uruchom projekt
+2. Open solution file JobHunter.sln.
+3. Create SQLServer database
+4. Configure appsettings.json with yours ConnectionStrings 
+5. Set project Model as startup and in console package manager run command `update-database`
+6. Run project
 
-## Technologie
+## Stack
 * Angular
 * .NETCore
 * EntityFramework
